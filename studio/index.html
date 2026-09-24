@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SECR3TLY Studio</title>
+<meta name="description" content="SECR3TLY Studio — le back-office du créateur : univers, contenus, communauté, commerce, marketing, analytics.">
+<meta name="theme-color" content="#0b0909">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0909'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%23d4467e'%3E3%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/brand.css">
+<link rel="stylesheet" href="studio.css">
+</head>
+<body class="studio">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="aura" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="demo-banner" id="demoBanner" role="note">
+  <span class="demo-dot" aria-hidden="true"></span>
+  <span><strong>Démo</strong> · vos modifications restent dans ce navigateur, aucun paiement réel.</span>
+  <button class="demo-reset" id="demoReset" type="button">Réinitialiser la démo</button>
+</div>
+
+<div class="shell">
+  <aside class="side" id="side" aria-label="Navigation du Studio">
+    <a class="side-brand" href="../" title="Retour à SECR3TLY">
+      <span class="wordmark">SECR<span class="three">3</span>TLY</span>
+      <span class="side-studio">Studio</span>
+    </a>
+    <div class="acct" id="acct"></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <a class="side-view" id="viewUniverse" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+        Voir mon univers
+      </a>
+      <div class="side-plan" id="sidePlan"></div>
+    </div>
+  </aside>
+
+  <div class="main-wrap">
+    <header class="topbar" id="topbar">
+      <div class="tb-left">
+        <a class="tb-brand" href="#/overview" aria-label="Studio — accueil"><span class="wordmark">SECR<span class="three">3</span>TLY</span></a>
+        <div class="tb-titles">
+          <div class="tb-eyebrow" id="tbEyebrow">Studio</div>
+          <h1 class="tb-title" id="tbTitle">Vue d'ensemble</h1>
+        </div>
+      </div>
+      <div class="tb-right">
+        <span class="saved" id="saved" aria-live="polite"></span>
+        <a class="btn btn-ghost btn-sm tb-view" id="tbView" href="#" target="_blank" rel="noopener">Voir mon univers</a>
+        <button class="tb-acct" id="tbAcct" type="button" aria-label="Changer de compte"></button>
+      </div>
+    </header>
+    <main class="main" id="main" tabindex="-1"></main>
+  </div>
+</div>
+
+<nav class="tabbar" id="tabbar" aria-label="Navigation principale"></nav>
+<div class="layer" id="layer"></div>
+
+<script src="../assets/themes.js"></script>
+<script src="../assets/data.js"></script>
+<script src="../assets/ui.js"></script>
+<script src="core.js"></script>
+<script src="views/overview.js"></script>
+<script src="views/universe.js"></script>
+<script src="views/content.js"></script>
+<script src="views/community.js"></script>
+<script src="views/commerce.js"></script>
+<script src="views/marketing.js"></script>
+<script src="views/analytics.js"></script>
+<script src="views/mediakit.js"></script>
+<script src="views/collabs.js"></script>
+<script src="views/copilot.js"></script>
+<script src="views/settings.js"></script>
+<script src="studio.js"></script>
+</body>
+</html>

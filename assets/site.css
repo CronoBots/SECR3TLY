@@ -1,0 +1,95 @@
+/* =====================================================================
+   SECR3TLY — Pages vitrine (landing, explore) : navigation, pied de page,
+   composants communs. S'appuie sur assets/brand.css.
+   ===================================================================== */
+
+/* ---------- Composants de base absents de brand.css ---------- */
+.avatar{display:inline-grid;place-items:center;border-radius:50%;overflow:hidden;color:#fff;font-weight:700;flex:none;position:relative;
+  letter-spacing:.02em;font-family:var(--font-ui);box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+svg.art{width:100%;height:100%}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:16px;top:-60px;z-index:200;background:var(--ivoire);color:var(--noir);padding:.6em 1em;border-radius:999px;font-weight:700;font-size:.85rem;transition:top .2s}
+.skip:focus{top:12px}
+.wm{font-weight:800;letter-spacing:.14em;font-family:var(--font-ui);font-size:.92em}
+.wm b{color:var(--signature);font-weight:800}
+
+/* ---------- Navigation ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s var(--ease),border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(11,9,9,.72);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:16px;height:64px}
+.nav-brand{display:flex;align-items:center;flex:none;padding:6px 0}
+.nav-brand img{height:17px;width:auto;mix-blend-mode:screen}
+.nav-links{display:none;gap:4px;margin-left:auto}
+.nav-links a{font-size:.86rem;color:var(--ivoire-dim);padding:.5em .85em;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--ivoire);background:rgba(243,236,230,.05)}
+.nav-cta{margin-left:auto;display:flex;align-items:center;gap:8px}
+.nav-cta .btn{padding:.6em 1.1em;font-size:.82rem}
+.nav-burger{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-2)}
+.nav-burger span{display:block;width:16px;height:1.5px;background:var(--ivoire);position:relative;transition:transform .3s var(--ease)}
+.nav-burger span::before,.nav-burger span::after{content:"";position:absolute;left:0;width:16px;height:1.5px;background:var(--ivoire);transition:transform .3s var(--ease),top .3s}
+.nav-burger span::before{top:-5px}.nav-burger span::after{top:5px}
+.nav.open .nav-burger span{background:transparent}
+.nav.open .nav-burger span::before{top:0;transform:rotate(45deg)}
+.nav.open .nav-burger span::after{top:0;transform:rotate(-45deg)}
+.nav-sheet{position:fixed;inset:64px 0 auto 0;background:rgba(11,9,9,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);padding:12px 20px 28px;display:none;flex-direction:column}
+.nav.open .nav-sheet{display:flex}
+.nav-sheet a{font-family:var(--font-display);font-size:1.7rem;padding:.35em 0;border-bottom:1px solid var(--line);color:var(--ivoire)}
+.nav-sheet a:last-child{border-bottom:0}
+.nav-sheet .btn{margin-top:18px;font-family:var(--font-ui);font-size:.95rem;border:0}
+@media(min-width:960px){
+  .nav-links{display:flex}
+  .nav-cta{margin-left:12px}
+  .nav-burger,.nav-sheet{display:none!important}
+  .nav-brand img{height:19px}
+}
+@media(max-width:380px){.nav-cta .btn{padding:.55em .9em;font-size:.78rem}}
+
+/* ---------- Titres de section ---------- */
+.sec{padding:96px 0;position:relative}
+@media(min-width:960px){.sec{padding:140px 0}}
+.sec-head{max-width:760px;margin-bottom:48px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-family:var(--font-display);font-weight:500;font-size:clamp(2.3rem,6.4vw,4.3rem);line-height:1.02;letter-spacing:-.015em;margin:.35em 0 .3em}
+.sec-head h2 em{font-style:italic;font-weight:400}
+.sec-head p{color:var(--ivoire-dim);font-size:1.02rem;max-width:620px}
+.sec-head.center p{margin:0 auto}
+.eyebrow .n{color:var(--signature);margin-right:.8em}
+.hair{height:1px;background:linear-gradient(90deg,transparent,var(--line-2),transparent);border:0}
+
+/* ---------- Cartes créateur (explore + landing) ---------- */
+.ccard{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--t-bg);color:var(--t-ink);
+  border:1px solid var(--t-line);transition:transform .45s var(--ease),box-shadow .45s var(--ease);position:relative;isolation:isolate}
+.ccard:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.ccard-cover{position:relative;aspect-ratio:16/10;overflow:hidden}
+.ccard-cover svg,.ccard-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.ccard:hover .ccard-cover svg,.ccard:hover .ccard-cover img{transform:scale(1.05)}
+.ccard-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,var(--t-bg))}
+.ccard-cat{position:absolute;top:12px;left:12px;z-index:1;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  padding:.35em .8em;border-radius:999px;background:rgba(0,0,0,.35);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.ccard-body{padding:0 18px 18px;margin-top:-30px;position:relative;z-index:1;display:flex;flex-direction:column;gap:6px;flex:1}
+.ccard-body .avatar{box-shadow:0 0 0 3px var(--t-bg)}
+.ccard-name{font-family:var(--t-font-display);font-size:1.45rem;line-height:1.1;margin-top:8px;text-transform:var(--t-title-transform);letter-spacing:var(--t-title-spacing);display:flex;align-items:center;gap:.35em}
+.ccard-name .ver{width:15px;height:15px;flex:none;color:var(--t-accent)}
+.ccard-tag{font-family:var(--t-font-body);font-size:.84rem;color:var(--t-muted)}
+.ccard-foot{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:12px;font-family:var(--t-font-body);font-size:.78rem;color:var(--t-muted)}
+.ccard-foot b{color:var(--t-ink);font-weight:700}
+.ccard-go{margin-left:auto;width:32px;height:32px;border-radius:var(--t-btn-radius);display:grid;place-items:center;background:var(--t-accent);color:var(--t-on-accent);transition:transform .3s var(--ease)}
+.ccard:hover .ccard-go{transform:translateX(3px)}
+.ccard-sw{display:flex;gap:4px}
+.ccard-sw i{width:9px;height:9px;border-radius:50%;border:1px solid var(--t-line)}
+
+/* ---------- Pied de page ---------- */
+.foot{border-top:1px solid var(--line);padding:64px 0 36px;margin-top:40px;position:relative}
+.foot-grid{display:grid;gap:36px;grid-template-columns:1fr 1fr}
+.foot-brand{grid-column:1/-1}
+.foot-brand img{height:20px;width:auto;mix-blend-mode:screen;margin-bottom:16px}
+.foot-brand p{color:var(--ivoire-dim);font-size:.9rem;max-width:320px}
+.foot-brand .sign{font-family:var(--font-display);font-style:italic;font-size:1.25rem;color:var(--ivoire);margin-top:14px}
+.foot h3{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--champagne);margin-bottom:14px;font-weight:700}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot li a{color:var(--ivoire-dim);font-size:.88rem;transition:color .2s}
+.foot li a:hover{color:var(--ivoire)}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ivoire-mute)}
+@media(min-width:760px){.foot-grid{grid-template-columns:2fr 1fr 1fr 1fr}.foot-brand{grid-column:auto}}
