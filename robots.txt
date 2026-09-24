@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /SECR3TLY/studio/
+Disallow: /studio/
+
+Sitemap: https://cronobots.github.io/SECR3TLY/sitemap.xml

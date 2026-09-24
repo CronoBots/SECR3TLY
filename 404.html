@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Univers introuvable — SECR3TLY</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0909">
+<meta name="color-scheme" content="dark">
+<script>
+/* =====================================================================
+   SECR3TLY — Routeur des smart links (GitHub Pages)
+   <base>/<handle>[/<section>][?query][#hash]  →  <base>c/?u=<handle>&s=<section>&query#hash
+   Base : sur *.github.io = '/<1er segment>/', sinon '/'.
+   Fonctionne à n'importe quelle profondeur : toutes les URLs sont absolues.
+   ===================================================================== */
+(function (w) {
+  'use strict';
+  var RESERVED = ['studio', 'explore', 'c', 'assets', 'docs'];
+
+  function route(href) {
+    var u = new URL(href);
+    var segs = u.pathname.split('/').filter(Boolean).map(function (s) {
+      try { return decodeURIComponent(s); } catch (e) { return s; }
+    });
+    var base = '/';
+    if (/\.github\.io$/i.test(u.hostname) && segs.length) { base = '/' + segs[0] + '/'; segs = segs.slice(1); }
+    var out = { base: base, home: u.origin + base, handle: '', section: '' };
+    var handle = String(segs[0] || '').replace(/^@/, '').toLowerCase();
+    var section = String(segs[1] || '').toLowerCase();
+    out.handle = handle;
+    if (!handle) { out.reason = 'empty'; return out; }
+    if (RESERVED.indexOf(handle) >= 0) { out.reason = 'reserved'; return out; }
+    if (/\.[a-z0-9]{2,5}$/i.test(handle) || !/^[a-z0-9][a-z0-9._-]{0,39}$/.test(handle)) { out.reason = 'invalid'; return out; }
+    if (segs.length > 2 || (section && !/^[a-z0-9][a-z0-9_-]{0,39}$/.test(section))) { out.reason = 'invalid'; return out; }
+    out.section = section;
+    var q = 'u=' + encodeURIComponent(handle) + (section ? '&s=' + encodeURIComponent(section) : '');
+    if (u.search.length > 1) q += '&' + u.search.slice(1);
+    out.redirect = u.origin + base + 'c/?' + q + u.hash;
+    return out;
+  }
+  w.SecretlyRoute = route;
+
+  var r;
+  try { r = route(w.location.href); } catch (e) { r = { base: '/', home: '/', reason: 'invalid' }; }
+  w.__route = r;
+  if (!r.redirect) return;
+
+  /* Vérifie que l'univers existe (données de démo + univers créés dans ce navigateur).
+     Si les données ne se chargent pas, on redirige quand même : la page créateur tranchera. */
+  document.documentElement.className = 'routing';
+  var done = false;
+  function go() { if (done) return; done = true; w.location.replace(r.redirect); }
+  var s = document.createElement('script');
+  s.src = r.home + 'assets/data.js';
+  s.onload = function () {
+    try {
+      if (w.Secretly && !w.Secretly.getCreator(r.handle)) { done = true; r.reason = 'unknown'; document.documentElement.className = ''; if (w.__render) w.__render(); return; }
+    } catch (e) { /* ignore */ }
+    go();
+  };
+  s.onerror = go;
+  setTimeout(go, 3000);
+  document.head.appendChild(s);
+})(window);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{min-height:100%;background:#0b0909}
+body{font-family:'Manrope',system-ui,sans-serif;color:#f3ece6;-webkit-font-smoothing:antialiased;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow-x:hidden;
+  background:radial-gradient(60% 45% at 50% 0%,rgba(212,70,126,.16),transparent 70%),radial-gradient(45% 40% at 100% 100%,rgba(156,127,166,.12),transparent 70%),#0b0909}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #e8b4bc;outline-offset:3px;border-radius:8px}
+.routing body > *{visibility:hidden}
+.routing body::after{content:"";position:fixed;left:50%;top:50%;width:28px;height:28px;margin:-14px;border-radius:50%;border:1.5px solid rgba(243,236,230,.15);border-top-color:#d4467e;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+header{padding:22px 20px;display:flex;justify-content:center}
+header img{height:18px;width:auto;mix-blend-mode:screen}
+.wm{font-weight:800;letter-spacing:.18em;font-size:.95rem}
+.wm b{color:#d4467e}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 20px 64px;text-align:center}
+.box{max-width:560px}
+.code{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#d9c3a0;font-weight:700}
+.code span{color:#d4467e}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.6rem,9vw,4.6rem);line-height:1;letter-spacing:-.015em;margin:.35em 0 .35em}
+h1 em{font-style:italic;font-weight:400;background:linear-gradient(135deg,#fbf6f1,#e9ddd4 45%,#d9c3a0);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{color:#b9aea8;font-size:1rem;line-height:1.6}
+.path{display:inline-block;margin-top:18px;padding:.45em 1em;border-radius:999px;border:1px solid rgba(243,236,230,.14);font-size:.84rem;color:#f3ece6;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.path b{color:#d4467e;font-weight:600}
+.acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.9em 1.5em;border-radius:999px;font-weight:600;font-size:.93rem;transition:transform .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:linear-gradient(135deg,#fbf6f1,#e9ddd4 45%,#d9c3a0);color:#1a1214}
+.btn-g{border:1px solid rgba(243,236,230,.18)}
+.btn-g:hover{border-color:#e8b4bc}
+footer{padding:20px;text-align:center;font-size:.74rem;color:#7d7270}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><a id="home-logo" href="/" aria-label="SECR3TLY — accueil"><span class="wm">SECR<b>3</b>TLY</span></a></header>
+<main>
+  <div class="box">
+    <p class="code">Erreur 4<span>0</span>4</p>
+    <h1 id="title">Cet univers <em>reste secret.</em></h1>
+    <p id="text">La page que vous cherchez n’existe pas, ou a choisi de rester cachée.</p>
+    <div id="path"></div>
+    <div class="acts">
+      <a class="btn btn-p" id="to-home" href="/">Retour à l’accueil</a>
+      <a class="btn btn-g" id="to-explore" href="/explore.html">Explorer les univers</a>
+    </div>
+  </div>
+</main>
+<footer>© 2026 SECR3TLY · One creator. One universe. One link.</footer>
+<script>
+(function (w) {
+  'use strict';
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  w.__render = function () {
+    var r = w.__route || { home: '/' };
+    var home = r.home || '/';
+    document.getElementById('to-home').href = home;
+    document.getElementById('to-explore').href = home + 'explore.html';
+    var logo = document.getElementById('home-logo');
+    logo.href = home;
+    logo.innerHTML = '<img src="' + home + 'assets/wordmark.webp" width="900" height="147" alt="SECR3TLY" onerror="this.outerHTML=\'<span class=&quot;wm&quot;>SECR<b>3</b>TLY</span>\'">';
+    if (r.reason === 'unknown' && r.handle) {
+      document.getElementById('title').innerHTML = 'Cet univers <em>n’existe pas encore.</em>';
+      document.getElementById('text').textContent = 'Personne n’a encore créé cet univers. Le nom est peut-être libre : réservez-le avant qu’un autre ne le fasse.';
+      document.getElementById('path').innerHTML = '<span class="path">secr3tly.com/<b>' + esc(r.handle) + '</b></span>';
+      var a = document.getElementById('to-explore');
+      a.textContent = 'Réserver ce nom'; a.href = home + 'studio/?claim=' + encodeURIComponent(r.handle);
+      a.addEventListener('click', function () { try { localStorage.setItem('secr3tly:claim', JSON.stringify(r.handle)); } catch (e) { /* ignore */ } });
+    }
+  };
+  if (!(w.__route && w.__route.redirect) || w.__route.reason) w.__render();
+})(window);
+</script>
+</body>
+</html>

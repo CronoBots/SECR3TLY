@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Explorer — SECR3TLY</title>
+<meta name="description" content="Découvrez les univers des créateurs SECR3TLY : mode, beauté, fitness, lifestyle, gaming, art, photographie. Tendances, nouveaux créateurs et événements à venir.">
+<meta name="theme-color" content="#0b0909">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cronobots.github.io/SECR3TLY/explore.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SECR3TLY">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Explorer les univers — SECR3TLY">
+<meta property="og:description" content="Tendances, nouveaux créateurs et événements à venir. Where creators get closer.">
+<meta property="og:url" content="https://cronobots.github.io/SECR3TLY/explore.html">
+<meta property="og:image" content="https://cronobots.github.io/SECR3TLY/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cronobots.github.io/SECR3TLY/assets/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/brand.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.ex-hero{padding:128px 0 28px;position:relative}
+@media(min-width:960px){.ex-hero{padding:164px 0 36px}}
+.ex-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.7rem,8vw,5.4rem);line-height:.98;letter-spacing:-.02em;margin:.3em 0 .3em}
+.ex-hero h1 em{font-style:italic;font-weight:400}
+.ex-hero p.lead{color:var(--ivoire-dim);max-width:560px;font-size:1.04rem}
+.ex-tools{position:sticky;top:64px;z-index:20;padding:14px 0;margin-top:26px;background:linear-gradient(180deg,rgba(11,9,9,.94) 70%,rgba(11,9,9,0));}
+.search{display:flex;align-items:center;gap:12px;padding:0 8px 0 18px;height:56px;border-radius:999px;background:rgba(243,236,230,.05);border:1px solid var(--line-2);max-width:640px;transition:border-color .3s,box-shadow .3s}
+.search:focus-within{border-color:rgba(232,180,188,.6);box-shadow:0 0 0 6px rgba(var(--signature-rgb),.1)}
+.search svg{flex:none;color:var(--ivoire-dim)}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;font-size:1rem;color:var(--ivoire)}
+.search input::placeholder{color:var(--ivoire-mute)}
+.search input::-webkit-search-cancel-button{display:none}
+.search .clear{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--ivoire-dim)}
+.search .clear:hover{background:rgba(243,236,230,.06);color:var(--ivoire)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:14px 20px 4px;margin:0 -20px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+@media(min-width:760px){.cats{flex-wrap:wrap;margin:0;padding:14px 0 4px}}
+.cat{flex:none;display:inline-flex;align-items:center;gap:.5em;padding:.6em 1.05em;border-radius:999px;border:1px solid var(--line-2);font-size:.84rem;font-weight:600;color:var(--ivoire-dim);transition:all .25s var(--ease)}
+.cat small{font-size:.7rem;color:var(--ivoire-mute);font-weight:600}
+.cat:hover{border-color:var(--poudre);color:var(--ivoire)}
+.cat[aria-pressed="true"]{background:var(--grad-nacre);color:#1a1214;border-color:transparent}
+.cat[aria-pressed="true"] small{color:#6b5a55}
+.cat.empty{opacity:.55}
+.block{padding:44px 0 12px}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+.block-head h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,4.6vw,2.7rem);line-height:1.05}
+.block-head h2 em{font-style:italic}
+.block-head span{font-size:.8rem;color:var(--ivoire-mute)}
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1160px){.grid.g4{grid-template-columns:repeat(4,1fr)}}
+.badge-real{position:absolute;top:12px;right:12px;z-index:1;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4em .8em;border-radius:999px;background:var(--grad-nacre);color:#1a1214}
+.badge-new{position:absolute;top:12px;right:12px;z-index:1;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4em .8em;border-radius:999px;background:var(--signature);color:#fff}
+.events{display:grid;gap:10px}
+@media(min-width:860px){.events{grid-template-columns:1fr 1fr}}
+.ev{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:14px 16px 14px 14px;border-radius:var(--r-lg);border:1px solid var(--line);background:rgba(243,236,230,.025);transition:border-color .3s,background .3s,transform .3s var(--ease)}
+.ev:hover{border-color:var(--line-2);background:rgba(243,236,230,.045);transform:translateY(-2px)}
+.ev-date{width:64px;height:64px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--t-bg);color:var(--t-ink);border:1px solid var(--t-line)}
+.ev-date b{font-family:var(--t-font-display);font-size:1.6rem;line-height:1;font-weight:500}
+.ev-date small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t-accent);font-weight:700;margin-top:2px}
+.ev h3{font-size:.98rem;font-weight:600;line-height:1.3}
+.ev-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:6px;font-size:.78rem;color:var(--ivoire-dim)}
+.ev-meta .who{display:inline-flex;align-items:center;gap:6px;color:var(--ivoire)}
+.ev-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.ev-right b{font-family:var(--font-display);font-size:1.2rem;font-weight:500;white-space:nowrap}
+.ev-right small{font-size:.7rem;color:var(--ivoire-mute);white-space:nowrap}
+@media(max-width:480px){.ev{grid-template-columns:56px 1fr}.ev-date{width:56px;height:56px}.ev-right{grid-column:2;flex-direction:row;align-items:center;justify-content:flex-start;gap:10px;text-align:left}}
+.empty-state{text-align:center;padding:64px 20px;border:1px dashed var(--line-2);border-radius:var(--r-xl)}
+.empty-state h3{font-family:var(--font-display);font-weight:500;font-size:1.8rem;margin-bottom:6px}
+.empty-state p{color:var(--ivoire-dim);margin-bottom:22px}
+.heart{margin:64px 0 24px;border-radius:var(--r-xl);padding:36px 26px;display:grid;gap:20px;align-items:center;
+  background:radial-gradient(70% 120% at 100% 0%,rgba(var(--signature-rgb),.16),transparent 60%),#140f11;border:1px solid rgba(232,180,188,.2)}
+@media(min-width:860px){.heart{grid-template-columns:1fr auto;padding:44px 48px}}
+.heart h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.8rem,4.4vw,2.6rem);line-height:1.08}
+.heart h2 em{font-style:italic}
+.heart p{color:var(--ivoire-dim);margin-top:8px;max-width:560px}
+.heart .acts{display:flex;flex-wrap:wrap;gap:10px}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body data-page="explore">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="aura" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<header data-nav></header>
+
+<main id="main">
+  <section class="ex-hero">
+    <div class="container">
+      <p class="eyebrow">Découverte</p>
+      <h1>Des univers <em class="nacre">à explorer.</em></h1>
+      <p class="lead">La découverte n’est qu’une porte d’entrée : chaque créateur vous reçoit ensuite chez lui, dans son propre univers — ses contenus, sa communauté, ses secrets.</p>
+    </div>
+  </section>
+
+  <div class="ex-tools">
+    <div class="container">
+      <form class="search" role="search" id="search-form">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <label for="q" class="sr-only">Rechercher un créateur</label>
+        <input id="q" type="search" placeholder="Rechercher un créateur, un univers, une ville…" autocomplete="off" enterkeyhint="search">
+        <button type="button" class="clear" id="clear" aria-label="Effacer la recherche" hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </form>
+      <div class="cats" id="cats" role="group" aria-label="Catégories"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="results" aria-live="polite"></div>
+    <div id="default">
+      <section class="block" aria-labelledby="t-trend">
+        <div class="block-head"><h2 id="t-trend">Tendances</h2><span>Les univers les plus suivis cette semaine</span></div>
+        <div class="grid g4" id="trend"></div>
+      </section>
+      <section class="block" aria-labelledby="t-new">
+        <div class="block-head"><h2 id="t-new">Nouveaux <em>créateurs</em></h2><span>Arrivés récemment</span></div>
+        <div class="grid" id="fresh"></div>
+      </section>
+      <section class="block" aria-labelledby="t-ev">
+        <div class="block-head"><h2 id="t-ev">Événements <em>à venir</em></h2><span id="ev-count"></span></div>
+        <div class="events" id="events"></div>
+      </section>
+    </div>
+
+    <aside class="heart reveal" aria-label="Créer votre univers">
+      <div>
+        <p class="eyebrow">Voici mon univers</p>
+        <h2>Et si le prochain univers <em>était le vôtre&nbsp;?</em></h2>
+        <p>Réservez secr3tly.com/votre-nom, choisissez l’un des 14 thèmes, ouvrez vos premiers contenus exclusifs. Vous serez en ligne ce soir.</p>
+      </div>
+      <div class="acts"><a class="btn btn-primary" href="studio/">Créer mon univers</a><a class="btn btn-ghost" href="./">Découvrir SECR3TLY</a></div>
+    </aside>
+  </div>
+</main>
+<footer data-foot></footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/themes.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+  var S = window.Secretly, T = window.SecretlyThemes, UI = window.SecretlyUI, esc = S.esc;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s) { return document.querySelector(s); }
+  var all = S.getCreators().filter(function (c) { return c && c.handle && c.name; });
+  var LVNAME = { public: 'Public', members: 'Members', vip: 'VIP', private: 'Private' };
+  var VER = '<svg class="ver" viewBox="0 0 24 24" fill="currentColor" aria-label="Vérifié" role="img"><path d="M12 1.5l2.6 2 3.3-.3.9 3.2 2.9 1.6-1 3.1 1 3.1-2.9 1.6-.9 3.2-3.3-.3-2.6 2-2.6-2-3.3.3-.9-3.2L2.2 14l1-3.1-1-3.1 2.9-1.6.9-3.2 3.3.3z"/><path d="M8 12.2l2.7 2.7L16.2 9.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/></svg>';
+  var ARROW = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  var fonts = {};
+  all.forEach(function (c) { var t = T.resolve(c.theme); fonts[t.display] = 1; fonts[t.body] = 1; });
+  T.loadFonts(Object.keys(fonts));
+
+  function vars(c) {
+    var t = T.resolve(c.theme), v = T.cssVars(t), out = '';
+    for (var k in v) out += k + ':' + v[k] + ';';
+    return { t: t, s: out };
+  }
+  function card(c, badge) {
+    var th = vars(c), t = th.t;
+    var cover = c.coverImg
+      ? UI.art(c.cover) + '<img src="' + esc(c.coverImg) + '" alt="" loading="lazy" onerror="this.remove()">'
+      : UI.art(c.cover);
+    var b = badge === 'new' ? '<span class="badge-new">Nouveau</span>' : c.externalUrl ? '<span class="badge-real">Univers réel</span>' : '';
+    return '<a class="ccard reveal" style="' + th.s + '" href="' + S.creatorUrl(c.handle) + '"' + (c.externalUrl ? ' target="_blank" rel="noopener"' : '') + ' aria-label="Univers de ' + esc(c.name) + ', ' + esc(c.category) + '">' +
+      '<div class="ccard-cover">' + cover + '<span class="ccard-cat">' + esc(c.category) + '</span>' + b + '</div>' +
+      '<div class="ccard-body">' + UI.avatar(c, 60) +
+        '<h3 class="ccard-name">' + esc(c.name) + (c.verified ? VER : '') + '</h3>' +
+        '<p class="ccard-tag">' + esc(c.tagline) + '</p>' +
+        '<div class="ccard-foot"><span><b>' + S.compact((c.stats || {}).followers || 0) + '</b> abonnés</span>' +
+          '<span class="ccard-sw" title="Thème ' + t.name + '" aria-hidden="true"><i style="background:' + t.bg + '"></i><i style="background:' + t.accent + '"></i><i style="background:' + t.accent2 + '"></i></span>' +
+          '<span class="ccard-go" aria-hidden="true">' + ARROW + '</span></div>' +
+      '</div></a>';
+  }
+
+  /* ---------- Catégories ---------- */
+  var state = { q: '', cat: '' };
+  try {
+    var qs = new URLSearchParams(location.search);
+    state.q = qs.get('q') || ''; state.cat = qs.get('cat') || '';
+    if (state.cat && S.CATEGORIES.indexOf(state.cat) < 0) state.cat = '';
+  } catch (e) { /* ignore */ }
+  function count(cat) { return all.filter(function (c) { return !cat || c.category === cat; }).length; }
+  $('#cats').innerHTML = [''].concat(S.CATEGORIES).map(function (cat) {
+    var n = count(cat);
+    return '<button type="button" class="cat' + (n ? '' : ' empty') + '" data-cat="' + esc(cat) + '" aria-pressed="false">' + (cat || 'Tous') + ' <small>' + n + '</small></button>';
+  }).join('');
+
+  /* ---------- Rendu ---------- */
+  function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function matches(c) {
+    if (state.cat && c.category !== state.cat) return false;
+    if (!state.q) return true;
+    var hay = norm([c.name, c.handle, c.pseudo, c.tagline, c.category, c.location, c.bio].join(' '));
+    return norm(state.q).split(/\s+/).every(function (w) { return hay.indexOf(w) >= 0; });
+  }
+  function render() {
+    document.querySelectorAll('.cat').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cat') === state.cat ? 'true' : 'false'); });
+    $('#clear').hidden = !state.q;
+    var filtering = state.q || state.cat;
+    $('#default').hidden = !!filtering;
+    var res = $('#results');
+    if (!filtering) { res.innerHTML = ''; }
+    else {
+      var list = all.filter(matches).sort(function (a, b) { return (b.stats.followers || 0) - (a.stats.followers || 0); });
+      var title = state.cat ? esc(state.cat) : 'Résultats';
+      res.innerHTML = '<section class="block"><div class="block-head"><h2>' + title + (state.q ? ' <em>« ' + esc(state.q) + ' »</em>' : '') + '</h2><span>' + list.length + ' univers</span></div>' +
+        (list.length ? '<div class="grid g4">' + list.map(function (c) { return card(c); }).join('') + '</div>'
+          : '<div class="empty-state"><h3>Aucun univers… pour l’instant.</h3><p>Personne n’a encore créé cet univers. Et si c’était vous&nbsp;?</p><a class="btn btn-primary" href="studio/">Créer mon univers</a></div>') +
+        '</section>';
+    }
+    try {
+      var p = new URLSearchParams();
+      if (state.q) p.set('q', state.q); if (state.cat) p.set('cat', state.cat);
+      history.replaceState(null, '', location.pathname + (p.toString() ? '?' + p : ''));
+    } catch (e) { /* ignore */ }
+    if (reduce) document.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); }); else UI.reveal();
+  }
+
+  /* Tendances / nouveaux */
+  var byFollowers = all.slice().sort(function (a, b) { return (b.stats.followers || 0) - (a.stats.followers || 0); });
+  $('#trend').innerHTML = byFollowers.slice(0, 4).map(function (c) { return card(c); }).join('');
+  var fresh = all.filter(function (c) { return !c.externalUrl; }).sort(function (a, b) { return (a.stats.followers || 0) - (b.stats.followers || 0); }).slice(0, 3);
+  $('#fresh').innerHTML = fresh.map(function (c) { return card(c, 'new'); }).join('');
+
+  /* Événements */
+  var now = Date.now(), evs = [];
+  all.forEach(function (c) { (c.events || []).forEach(function (e) { var d = new Date(e.date); if (!isNaN(d) && d.getTime() >= now - 864e5) evs.push({ e: e, c: c, d: d }); }); });
+  evs.sort(function (a, b) { return a.d - b.d; });
+  var MONTHS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+  var DAYS = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.'];
+  $('#ev-count').textContent = evs.length + ' rendez-vous';
+  $('#events').innerHTML = evs.length ? evs.map(function (x) {
+    var e = x.e, c = x.c, d = x.d, th = vars(c);
+    var hh = String(d.getHours()).padStart(2, '0') + 'h' + (d.getMinutes() ? String(d.getMinutes()).padStart(2, '0') : '');
+    return '<a class="ev reveal" href="' + S.creatorUrl(c.handle, 'events') + '">' +
+      '<span class="ev-date" style="' + th.s + '"><b>' + d.getDate() + '</b><small>' + MONTHS[d.getMonth()] + '</small></span>' +
+      '<div><h3>' + esc(e.title) + '</h3><div class="ev-meta"><span class="who">' + UI.avatar(c, 20) + esc(c.name) + '</span><span>' + DAYS[d.getDay()] + ' ' + hh + ' · ' + esc(e.place) + '</span></div></div>' +
+      '<div class="ev-right"><span class="lvl lvl-' + e.access + '">' + (LVNAME[e.access] || 'Public') + '</span><b>' + (e.price ? S.money(e.price) : 'Gratuit') + '</b>' + (e.seats ? '<small>' + e.seats + ' places</small>' : '') + '</div></a>';
+  }).join('') : '<div class="empty-state"><h3>Rien de prévu pour le moment.</h3><p>Revenez bientôt : les créateurs préparent leurs prochains rendez-vous.</p></div>';
+
+  /* ---------- Interactions ---------- */
+  var input = $('#q'); input.value = state.q;
+  var tmr;
+  input.addEventListener('input', function () { clearTimeout(tmr); tmr = setTimeout(function () { state.q = input.value.trim(); render(); }, 120); });
+  $('#search-form').addEventListener('submit', function (e) { e.preventDefault(); state.q = input.value.trim(); render(); input.blur(); });
+  $('#clear').addEventListener('click', function () { input.value = ''; state.q = ''; render(); input.focus(); });
+  $('#cats').addEventListener('click', function (e) {
+    var b = e.target.closest('.cat'); if (!b) return;
+    var c = b.getAttribute('data-cat'); state.cat = state.cat === c ? '' : c; render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

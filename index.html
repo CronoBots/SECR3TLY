@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SECR3TLY — One creator. One universe. One link.</title>
+<meta name="description" content="SECR3TLY donne à chaque créateur son propre univers : identité, contenus exclusifs, abonnements, boutique, communauté, CRM, statistiques et outils pro, sur votre propre domaine. Voici mon univers.">
+<meta name="theme-color" content="#0b0909">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://cronobots.github.io/SECR3TLY/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SECR3TLY">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="SECR3TLY — One creator. One universe. One link.">
+<meta property="og:description" content="Linktree : « Voici mes liens. » SECR3TLY : « Voici mon univers. » Contenus exclusifs, abonnements, boutique, communauté et business, derrière un seul lien.">
+<meta property="og:url" content="https://cronobots.github.io/SECR3TLY/">
+<meta property="og:image" content="https://cronobots.github.io/SECR3TLY/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo SECR3TLY, le 3 lumineux en rose">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SECR3TLY — One creator. One universe. One link.">
+<meta name="twitter:description" content="Votre espace. Votre audience. Vos secrets. La plateforme qui donne à chaque créateur son propre univers.">
+<meta name="twitter:image" content="https://cronobots.github.io/SECR3TLY/assets/og-image.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cronobots.github.io/SECR3TLY/#org",
+      "name": "SECR3TLY",
+      "url": "https://cronobots.github.io/SECR3TLY/",
+      "logo": "https://cronobots.github.io/SECR3TLY/assets/icon-512.png",
+      "image": "https://cronobots.github.io/SECR3TLY/assets/og-image.jpg",
+      "slogan": "One creator. One universe. One link.",
+      "description": "Plateforme créateur : univers personnel, contenus exclusifs, abonnements, boutique, communauté, CRM et outils business."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cronobots.github.io/SECR3TLY/#website",
+      "name": "SECR3TLY",
+      "url": "https://cronobots.github.io/SECR3TLY/",
+      "inLanguage": "fr",
+      "publisher": { "@id": "https://cronobots.github.io/SECR3TLY/#org" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://cronobots.github.io/SECR3TLY/explore.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="preload" as="image" href="assets/logo-hero.webp" type="image/webp">
+<link rel="stylesheet" href="assets/brand.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* =============================== HERO =============================== */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:92px 0 56px;overflow:hidden;text-align:center}
+.hero-glow{position:absolute;left:50%;top:34%;width:120vmax;height:70vmax;transform:translate(-50%,-50%);pointer-events:none;
+  background:radial-gradient(closest-side,rgba(var(--signature-rgb),.16),rgba(156,127,166,.06) 55%,transparent);animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.6;transform:translate(-50%,-50%) scale(1.06)}}
+.hero-logo{position:relative;left:50%;width:132vw;max-width:1280px;transform:translateX(-50%);will-change:transform}
+.hero-logo img{width:100%;height:auto;
+  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 58%,transparent 100%);
+  mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 58%,transparent 100%)}
+@media(min-width:760px){.hero-logo{width:100vw}}
+.hero-copy{position:relative;margin-top:-6vw;z-index:1}
+@media(min-width:1280px){.hero-copy{margin-top:-70px}}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:.8em}
+.hero .eyebrow::before,.hero .eyebrow::after{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--champagne))}
+.hero .eyebrow::after{transform:scaleX(-1)}
+.hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.55rem,8.4vw,6rem);line-height:.98;letter-spacing:-.02em;margin:.28em auto .3em;max-width:12ch}
+@media(min-width:760px){.hero h1{max-width:none}}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero h1 .l{display:block}
+@media(min-width:760px){.hero h1 .l{display:inline}}
+.hero-sub{max-width:600px;margin:0 auto;color:var(--ivoire-dim);font-size:clamp(1rem,2.6vw,1.12rem)}
+.claim{max-width:560px;margin:34px auto 0}
+.claim-box{display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(243,236,230,.05);border:1px solid var(--line-2);
+  transition:border-color .3s,box-shadow .3s;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.claim-box:focus-within{border-color:rgba(232,180,188,.6);box-shadow:0 0 0 6px rgba(var(--signature-rgb),.1)}
+.claim-box.bad{border-color:rgba(224,122,122,.7)}
+.claim-pre{padding-left:16px;color:var(--ivoire-dim);font-size:.95rem;white-space:nowrap;font-weight:500}
+.claim-pre b{color:var(--signature);font-weight:inherit}
+.claim-box input{flex:1;min-width:0;background:transparent;border:0;outline:0;font-size:.95rem;padding:.7em 0;color:var(--ivoire);font-weight:600}
+.claim-box input::placeholder{color:var(--ivoire-mute);font-weight:500}
+.claim-box .btn{padding:.8em 1.3em}
+.claim-msg{min-height:1.5em;margin-top:10px;font-size:.84rem;color:var(--ivoire-mute)}
+.claim-msg.ok{color:var(--ok)}.claim-msg.err{color:#f0a0a0}
+.hero-alt{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 22px;margin-top:10px;font-size:.88rem}
+.hero-alt a{color:var(--ivoire);display:inline-flex;align-items:center;gap:.45em;border-bottom:1px solid var(--line-2);padding-bottom:2px;transition:border-color .2s}
+.hero-alt a:hover{border-color:var(--poudre)}
+.hero-alt .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(127,191,154,.15)}
+.hero-facts{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:40px}
+.hero-facts span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ivoire-mute);padding:.5em 1em;border:1px solid var(--line);border-radius:999px}
+.scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:1px;height:44px;background:linear-gradient(var(--line-2),transparent);overflow:hidden}
+.scroll-cue::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--poudre);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{to{top:110%}}
+@media(max-width:759px){.scroll-cue{display:none}}
+
+/* =========================== CONTRASTE ============================ */
+.versus{display:grid;gap:16px}
+@media(min-width:860px){.versus{grid-template-columns:1fr 1.25fr;gap:20px}}
+.vs{border-radius:var(--r-xl);padding:30px 24px;position:relative;overflow:hidden;min-height:100%}
+.vs-label{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700}
+.vs q{display:block;font-family:var(--font-display);font-size:clamp(2rem,5.4vw,3.3rem);line-height:1.02;margin:.35em 0 .9em;quotes:"« " " »"}
+.vs-a{background:#121011;border:1px solid var(--line)}
+.vs-a .vs-label{color:var(--ivoire-mute)}
+.vs-a q{color:var(--ivoire-mute)}
+.vs-a .pill{display:block;text-align:center;padding:.85em;border-radius:12px;background:#1b1819;color:#8d8583;font-size:.88rem;margin-top:8px;border:1px solid rgba(255,255,255,.04)}
+.vs-a .note{margin-top:18px;font-size:.84rem;color:var(--ivoire-mute)}
+.vs-b{background:
+  radial-gradient(80% 70% at 100% 0%,rgba(var(--signature-rgb),.2),transparent 60%),
+  radial-gradient(60% 60% at 0% 100%,rgba(156,127,166,.16),transparent 60%),#150f12;
+  border:1px solid rgba(232,180,188,.22)}
+.vs-b .vs-label{color:var(--poudre)}
+.vs-b q{font-style:italic}
+.uni{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.uni > *{border-radius:16px;background:rgba(243,236,230,.05);border:1px solid var(--line);padding:12px;font-size:.78rem;position:relative;overflow:hidden;min-height:78px}
+.uni .u-id{grid-column:span 6;display:flex;align-items:center;gap:12px;min-height:0}
+.uni .u-id strong{font-family:var(--font-display);font-size:1.35rem;font-weight:500;display:block;line-height:1.1}
+.uni .u-id small{color:var(--ivoire-dim)}
+.uni .u-art{grid-column:span 3;padding:0;min-height:120px}
+.uni .u-art svg{position:absolute;inset:0}
+.uni .u-art .lvl{position:absolute;left:10px;bottom:10px}
+.uni .u-art.lock svg{filter:blur(7px);transform:scale(1.2)}
+.uni .u-art .lk{position:absolute;inset:0;display:grid;place-items:center;color:#fff}
+.uni .u-k{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between}
+.uni .u-k b{font-family:var(--font-display);font-size:1.5rem;font-weight:500;line-height:1}
+.uni .u-k span{color:var(--ivoire-dim);font-size:.72rem}
+.contrasts{display:grid;gap:1px;margin-top:20px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+@media(min-width:760px){.contrasts{grid-template-columns:repeat(3,1fr)}}
+.contrasts div{background:var(--noir);padding:22px}
+.contrasts s{display:block;color:var(--ivoire-mute);text-decoration-color:rgba(var(--signature-rgb),.6);font-size:.9rem}
+.contrasts strong{display:block;font-family:var(--font-display);font-weight:500;font-size:1.45rem;margin-top:4px;line-height:1.15}
+
+/* ============================ SHOWCASE ============================ */
+.show{display:grid;gap:48px;align-items:center}
+@media(min-width:900px){.show{grid-template-columns:auto 1fr;gap:88px}}
+.phone{position:relative;width:min(300px,78vw);aspect-ratio:780/1688;margin:0 auto;border-radius:48px;padding:10px;
+  background:linear-gradient(145deg,#2a2426,#0f0c0d 40%,#1d1719);box-shadow:0 0 0 1px rgba(255,255,255,.07) inset,0 60px 120px -40px rgba(0,0,0,.95),0 0 90px -20px rgba(var(--signature-rgb),.35)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:30%;height:24px;border-radius:20px;background:#050404;z-index:2}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:39px}
+.phone-wrap{position:relative;will-change:transform}
+.phone-tag{position:absolute;right:-6px;top:18%;z-index:3;padding:.55em .95em;border-radius:999px;font-size:.74rem;font-weight:600;display:flex;align-items:center;gap:.5em}
+.phone-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.phone-tag2{left:-10px;right:auto;top:auto;bottom:16%}
+@media(min-width:900px){.phone-tag{right:-48px}.phone-tag2{left:-56px}}
+.show-copy ul{list-style:none;margin:22px 0 30px;display:grid;gap:10px}
+.show-copy li{display:flex;gap:12px;color:var(--ivoire-dim);font-size:.95rem}
+.show-copy li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--signature);margin-top:.6em}
+.row-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:96px 0 24px}
+.row-head h3{font-family:var(--font-display);font-weight:500;font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.05}
+.row-head h3 em{font-style:italic}
+.row-nav{display:none;gap:8px}
+@media(min-width:760px){.row-nav{display:flex}}
+.row-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:border-color .2s,background .2s}
+.row-nav button:hover{border-color:var(--poudre);background:rgba(232,180,188,.06)}
+.rail{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 20px 30px;margin:0 -20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+@media(min-width:760px){.rail{padding:10px 32px 30px;margin:0 -32px}}
+.rail > a{scroll-snap-align:center;flex:none;display:flex;flex-direction:column;align-items:center;gap:14px;transition:transform .5s var(--ease)}
+.rail > a:hover{transform:translateY(-6px)}
+.rail-cap{text-align:center;font-size:.82rem;color:var(--ivoire-dim)}
+.rail-cap b{display:block;color:var(--ivoire);font-weight:600;font-size:.9rem}
+
+/* ---- Mini univers (téléphone thématisé) ---- */
+.mini{width:236px;height:486px;border-radius:36px;padding:7px;flex:none;background:linear-gradient(145deg,#2a2426,#0f0c0d 45%,#1d1719);
+  box-shadow:0 0 0 1px rgba(255,255,255,.07) inset,0 40px 80px -40px rgba(0,0,0,.95)}
+.mini-screen{height:100%;border-radius:29px;overflow:hidden;background:var(--t-background);color:var(--t-ink);font-family:var(--t-font-body);position:relative;display:flex;flex-direction:column}
+.mini-cover{height:116px;position:relative;flex:none}
+.mini-cover svg{position:absolute;inset:0}
+.mini-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,var(--t-bg))}
+.mini-body{padding:0 14px;margin-top:-30px;position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
+.mini-body .avatar{box-shadow:0 0 0 3px var(--t-bg)}
+.mini-name{font-family:var(--t-font-display);font-size:20px;text-transform:var(--t-title-transform);letter-spacing:var(--t-title-spacing);line-height:1.1;margin-top:8px}
+.mini-tag{font-size:10.5px;color:var(--t-muted);margin-top:3px}
+.mini-stats{display:flex;gap:12px;font-size:9.5px;color:var(--t-muted);margin:8px 0 6px}
+.mini-stats b{color:var(--t-ink);font-weight:700}
+.mini-btn{display:block;width:100%;padding:8px 10px;font-size:10.5px;font-weight:600;border-radius:var(--t-btn-radius);background:var(--t-card);
+  border:var(--t-border) solid var(--t-line);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:var(--t-shadow)}
+.mini-btn.acc{background:var(--t-accent);color:var(--t-on-accent);border-color:transparent}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;margin-top:10px}
+.mini-tile{aspect-ratio:1;border-radius:min(var(--t-radius),14px);overflow:hidden;position:relative}
+.mini-tile svg.art{position:absolute;inset:0}
+.mini-tile.lock svg.art{filter:blur(6px);transform:scale(1.25)}
+.mini-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:8.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.18)}
+.mini-url{margin-top:auto;padding:10px;text-align:center;font-size:8.5px;color:var(--t-muted);letter-spacing:.06em}
+
+/* =========================== ACCÈS ============================ */
+.access{display:grid;gap:28px}
+@media(min-width:960px){.access{grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}}
+.lv-list{display:grid;gap:10px}
+@media(min-width:560px) and (max-width:959px){.lv-list{grid-template-columns:1fr 1fr}}
+.lv{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:center;text-align:left;padding:18px 18px;border-radius:var(--r-lg);
+  border:1px solid var(--line);background:rgba(243,236,230,.025);transition:border-color .3s,background .3s,transform .3s var(--ease)}
+.lv:hover{border-color:var(--line-2)}
+.lv[aria-pressed="true"]{border-color:rgba(232,180,188,.45);background:linear-gradient(135deg,rgba(var(--signature-rgb),.1),rgba(156,127,166,.06))}
+.lv-ico{grid-row:span 2;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-2);color:var(--champagne)}
+.lv[aria-pressed="true"] .lv-ico{background:var(--grad-signature);color:#fff;border-color:transparent}
+.lv h3{font-size:1rem;font-weight:700;display:flex;align-items:center;gap:8px}
+.lv p{font-size:.82rem;color:var(--ivoire-dim);grid-column:2/4}
+.lv .pr{font-family:var(--font-display);font-size:1.15rem;color:var(--ivoire);white-space:nowrap}
+.lv .pr small{font-family:var(--font-ui);font-size:.7rem;color:var(--ivoire-mute)}
+.ad{border-radius:var(--r-xl);padding:18px;background:#120e10;border:1px solid var(--line)}
+.ad-head{display:flex;align-items:center;gap:12px;padding:4px 4px 16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.ad-head div{flex:1;min-width:0}
+.ad-head strong{display:block;font-size:.95rem}
+.ad-head small{color:var(--ivoire-dim);font-size:.78rem}
+.ad-meter{height:3px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:8px}
+.ad-meter i{display:block;height:100%;background:var(--grad-signature);transition:width .8s var(--ease)}
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:560px){.ad-grid{grid-template-columns:repeat(3,1fr)}}
+.ad-tile{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:#000;isolation:isolate}
+.ad-tile svg.art{position:absolute;inset:0;transition:filter .9s var(--ease),transform .9s var(--ease)}
+.ad-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 35%,rgba(0,0,0,.72));z-index:1}
+.ad-meta{position:absolute;left:10px;right:10px;bottom:10px;z-index:2}
+.ad-meta .lvl{font-size:.58rem}
+.ad-meta h4{font-size:.8rem;font-weight:600;line-height:1.25;margin-top:6px;color:#fff}
+.ad-meta small{display:block;font-size:.68rem;color:rgba(255,255,255,.7);margin-top:2px}
+.ad-lock{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px;text-align:center;
+  background:rgba(11,9,9,.35);color:#fff;transition:opacity .6s var(--ease),visibility .6s}
+.ad-lock span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.ad-lock button{font-size:.74rem;font-weight:700;padding:.5em 1em;border-radius:999px;background:rgba(243,236,230,.92);color:#1a1214}
+.ad-lock button:hover{background:#fff}
+.ad-tile.locked svg.art{filter:blur(14px) saturate(.8);transform:scale(1.25)}
+.ad-tile.locked .ad-meta h4,.ad-tile.locked .ad-meta small{filter:blur(4px)}
+.ad-tile:not(.locked) .ad-lock{opacity:0;visibility:hidden}
+.ad-tile.just::before{content:"";position:absolute;inset:0;z-index:4;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-100%);animation:shine 1.1s var(--ease) forwards;pointer-events:none}
+@keyframes shine{to{transform:translateX(100%)}}
+
+/* ========================= FONCTIONNALITÉS ========================= */
+.sys{display:grid;gap:32px;align-items:center}
+@media(min-width:960px){.sys{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px}}
+.orbit{position:relative;width:100%;max-width:580px;aspect-ratio:1;margin:0 auto}
+.orbit-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orbit-lines line{stroke:rgba(243,236,230,.07);stroke-width:.25;transition:stroke .5s,stroke-width .5s}
+.orbit-lines line.on{stroke:url(#olg);stroke-width:.5}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid var(--line);transform:translate(-50%,-50%)}
+.ring.r1{width:58%;height:58%}.ring.r2{width:90%;height:90%;border-style:dashed;border-color:rgba(243,236,230,.07)}
+.core{position:absolute;left:50%;top:50%;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 35% 30%,#3a2530,#150f12 70%);border:1px solid rgba(232,180,188,.3);box-shadow:0 0 60px -10px rgba(var(--signature-rgb),.5)}
+.core::before,.core::after{content:"";position:absolute;inset:-14%;border-radius:50%;border:1px solid rgba(232,180,188,.18);animation:pulse 4s ease-out infinite}
+.core::after{animation-delay:2s}
+@keyframes pulse{from{transform:scale(.85);opacity:1}to{transform:scale(1.35);opacity:0}}
+.core strong{display:block;font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(1.3rem,4vw,2rem);line-height:1}
+.core small{display:block;font-size:clamp(.5rem,1.6vw,.64rem);letter-spacing:.2em;text-transform:uppercase;color:var(--champagne);margin-top:4px}
+.node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2}
+.node .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#161113;border:1px solid var(--line-2);color:var(--ivoire-dim);
+  transition:all .45s var(--ease)}
+.node .ic svg{width:18px;height:18px}
+.node .lb{display:none;font-size:.7rem;font-weight:600;color:var(--ivoire-dim);white-space:nowrap;transition:color .3s}
+.node:hover .ic{border-color:var(--poudre);color:var(--ivoire)}
+.node.on .ic{background:var(--grad-signature);border-color:transparent;color:#fff;transform:scale(1.15);box-shadow:0 0 30px -4px rgba(var(--signature-rgb),.7)}
+.node.on .lb{color:var(--ivoire)}
+@media(min-width:600px){.node .ic{width:50px;height:50px}.node .ic svg{width:21px;height:21px}.node .lb{display:block;position:absolute;top:100%;margin-top:6px}}
+.panel{border-radius:var(--r-xl);padding:28px 24px;min-height:300px;display:flex;flex-direction:column}
+.panel-n{font-family:var(--font-display);font-size:.95rem;color:var(--signature);letter-spacing:.1em}
+.panel h3{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,5vw,2.8rem);line-height:1.02;margin:.2em 0 .45em}
+.panel p{color:var(--ivoire-dim)}
+.panel ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}
+.panel-link{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ivoire-mute)}
+.panel-link b{color:var(--champagne);font-weight:600}
+.panel-body{transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.panel-body.swap{opacity:0;transform:translateY(8px)}
+.bento{display:grid;gap:14px;margin-top:64px}
+@media(min-width:760px){.bento{grid-template-columns:repeat(6,1fr)}.b-links{grid-column:span 3}.b-an{grid-column:span 3}.b-crm{grid-column:span 3}.b-ai{grid-column:span 3}}
+@media(min-width:1080px){.b-links{grid-column:span 2}.b-an{grid-column:span 4}.b-crm{grid-column:span 3}.b-ai{grid-column:span 3}}
+.b{border-radius:var(--r-xl);padding:24px;position:relative;overflow:hidden}
+.b h3{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--champagne);font-weight:700;margin-bottom:6px}
+.b > p{font-family:var(--font-display);font-size:1.45rem;line-height:1.15;margin-bottom:18px}
+.sl{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.sl ul{list-style:none;display:grid;gap:4px;min-width:0}
+.sl button{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;font-size:.8rem;padding:.55em .7em;border-radius:10px;color:var(--ivoire-dim);transition:background .2s,color .2s}
+.sl button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sl button b{font-weight:600;color:var(--ivoire-mute);font-size:.72rem}
+.sl button[aria-pressed="true"]{background:rgba(243,236,230,.07);color:var(--ivoire)}
+.sl button[aria-pressed="true"] b{color:var(--poudre)}
+.sl .qr-box{width:108px;padding:8px;border-radius:14px;background:var(--ivoire)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 20px}
+@media(min-width:560px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpis div{border-left:1px solid var(--line-2);padding-left:12px}
+.kpis small{display:block;font-size:.7rem;color:var(--ivoire-mute);letter-spacing:.06em}
+.kpis b{font-family:var(--font-display);font-size:1.6rem;font-weight:500;line-height:1.1}
+.spark{width:100%;height:110px;margin-top:18px}
+.spark-cap{display:flex;justify-content:space-between;font-size:.7rem;color:var(--ivoire-mute);margin-top:6px}
+.segs{display:flex;flex-wrap:wrap;gap:8px}
+.seg{display:inline-flex;align-items:center;gap:.6em;padding:.55em .95em;border-radius:999px;border:1px solid var(--line-2);font-size:.82rem}
+.seg b{font-weight:700;color:var(--ivoire)}
+.seg i{width:7px;height:7px;border-radius:50%}
+.chat{display:flex;flex-direction:column;gap:10px}
+.bub{max-width:88%;padding:.75em 1em;border-radius:18px;font-size:.86rem;line-height:1.45}
+.bub.me{align-self:flex-end;background:rgba(243,236,230,.08);border-bottom-right-radius:6px}
+.bub.ai{background:linear-gradient(135deg,rgba(var(--signature-rgb),.16),rgba(156,127,166,.12));border:1px solid rgba(232,180,188,.2);border-bottom-left-radius:6px}
+.bub.ai small{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--poudre);margin-bottom:4px;font-weight:700}
+
+/* ============================ THÈMES ============================ */
+.themes{display:grid;gap:32px;align-items:start;grid-template-columns:minmax(0,1fr)}
+.themes > *{min-width:0}
+@media(min-width:960px){.themes{grid-template-columns:minmax(0,1fr) auto;gap:56px}}
+.th-list{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 20px 12px;margin:0 -20px;scrollbar-width:none}
+.th-list::-webkit-scrollbar{display:none}
+@media(min-width:960px){.th-list{display:grid;grid-template-columns:repeat(2,1fr);overflow:visible;padding:0;margin:0}}
+.th{flex:none;width:132px;scroll-snap-align:start;display:flex;align-items:center;gap:12px;padding:10px;border-radius:16px;border:1px solid var(--line);text-align:left;transition:border-color .3s,background .3s}
+@media(min-width:960px){.th{width:auto}}
+.th:hover{border-color:var(--line-2)}
+.th[aria-pressed="true"]{border-color:rgba(232,180,188,.55);background:rgba(232,180,188,.06)}
+.th-sw{width:44px;height:44px;border-radius:12px;flex:none;display:grid;place-items:center;font-size:18px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.th-sw i{position:absolute;right:5px;bottom:5px;width:9px;height:9px;border-radius:50%}
+.th b{display:block;font-size:.86rem;font-weight:600}
+.th small{display:block;font-size:.7rem;color:var(--ivoire-mute)}
+.th-stage{display:flex;flex-direction:column;align-items:center;gap:20px}
+.th-stage .mini{width:260px;height:530px}
+.th-spec{display:grid;grid-template-columns:auto auto;gap:6px 18px;font-size:.78rem;color:var(--ivoire-dim);padding:14px 18px;border-radius:16px;width:100%;max-width:320px}
+.th-spec dt{color:var(--ivoire-mute)}
+.th-spec dd{color:var(--ivoire);text-align:right}
+
+/* ============================ DOMAINE ============================ */
+.dom{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.dom{grid-template-columns:.8fr 1.2fr;gap:64px}}
+.steps{list-style:none;display:grid;gap:18px;margin-top:28px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:14px;counter-increment:s}
+.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--font-display);color:var(--signature);font-size:1.1rem;line-height:1.3}
+.steps b{display:block;font-weight:600}
+.steps span{color:var(--ivoire-dim);font-size:.9rem}
+.browser{border-radius:18px;overflow:hidden;border:1px solid var(--line-2);background:#181315;box-shadow:0 60px 120px -50px rgba(0,0,0,.95),0 0 80px -30px rgba(var(--signature-rgb),.3)}
+.br-bar{display:flex;align-items:center;gap:10px;padding:11px 14px;background:#1f191b;border-bottom:1px solid var(--line)}
+.br-dots{display:flex;gap:6px}.br-dots i{width:10px;height:10px;border-radius:50%;background:#3a3133}
+.br-url{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:.45em 1em;border-radius:999px;background:#0f0c0d;font-size:.82rem;color:var(--ivoire);min-width:0}
+.br-url svg{flex:none;color:var(--ok)}
+.br-url .caret{display:inline-block;width:1px;height:1em;background:var(--poudre);margin-left:1px;animation:blink 1s steps(1) infinite;vertical-align:-2px}
+@keyframes blink{50%{opacity:0}}
+.br-page{background:var(--t-background);color:var(--t-ink);font-family:var(--t-font-body);transition:opacity .4s var(--ease)}
+.br-page.fade{opacity:0}
+.bp-cover{height:120px;position:relative}
+.bp-cover svg{position:absolute;inset:0}
+.bp-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,var(--t-bg))}
+@media(min-width:600px){.bp-cover{height:170px}}
+.bp-head{display:flex;align-items:flex-end;gap:14px;padding:0 20px;margin-top:-36px;position:relative}
+.bp-head .avatar{box-shadow:0 0 0 3px var(--t-bg)}
+.bp-head strong{display:block;font-family:var(--t-font-display);font-size:1.5rem;line-height:1.05;text-transform:var(--t-title-transform);letter-spacing:var(--t-title-spacing);font-weight:500}
+.bp-head small{color:var(--t-muted);font-size:.78rem}
+.bp-join{margin-left:auto;padding:.6em 1.1em;border-radius:var(--t-btn-radius);background:var(--t-accent);color:var(--t-on-accent);font-size:.76rem;font-weight:700;white-space:nowrap;display:none}
+@media(min-width:600px){.bp-join{display:block}}
+.bp-tabs{display:flex;gap:18px;padding:16px 20px 0;border-bottom:1px solid var(--t-line);font-size:.76rem;color:var(--t-muted);overflow:hidden;white-space:nowrap}
+.bp-tabs span{padding-bottom:10px}
+.bp-tabs span:first-child{color:var(--t-ink);border-bottom:2px solid var(--t-accent)}
+.bp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 20px}
+.bp-grid div{aspect-ratio:1;border-radius:min(var(--t-radius),16px);overflow:hidden;position:relative}
+.bp-grid svg{position:absolute;inset:0}
+.bp-grid .lock svg{filter:blur(8px);transform:scale(1.2)}
+.bp-grid .lvl{position:absolute;left:8px;bottom:8px;font-size:.55rem}
+.bp-foot{text-align:center;padding:4px 0 16px;font-size:.62rem;letter-spacing:.14em;color:var(--t-muted);opacity:.75}
+
+/* ============================ VISION ============================ */
+.journey{list-style:none;display:grid;gap:0;position:relative;counter-reset:j}
+.journey::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--poudre),var(--mauve),var(--champagne))}
+.journey li{display:grid;grid-template-columns:40px 1fr;gap:16px;padding:12px 0;position:relative;counter-increment:j}
+.journey li::before{content:counter(j);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--noir);border:1px solid var(--line-2);font-family:var(--font-display);font-size:1.05rem;color:var(--champagne);position:relative;z-index:1}
+.journey b{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:500;line-height:1.1;margin-top:4px}
+.journey span{color:var(--ivoire-dim);font-size:.86rem}
+.journey li:last-child::before{background:var(--grad-signature);color:#fff;border-color:transparent}
+@media(min-width:960px){
+  .journey{grid-template-columns:repeat(7,1fr);gap:12px}
+  .journey::before{left:20px;right:20px;top:20px;bottom:auto;width:auto;height:1px;background:linear-gradient(90deg,var(--poudre),var(--mauve),var(--champagne))}
+  .journey li{grid-template-columns:1fr;gap:14px;padding:0}
+  .journey::after{content:"";position:absolute;top:17px;left:20px;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 14px 3px rgba(var(--signature-rgb),.8);animation:travel 7s var(--ease) infinite}
+}
+@keyframes travel{from{left:20px;opacity:0}8%{opacity:1}92%{opacity:1}to{left:calc(100% - 26px);opacity:0}}
+.equation{margin-top:80px;display:grid;gap:14px}
+.eq{border-radius:var(--r-xl);padding:26px 24px;display:grid;gap:10px}
+@media(min-width:760px){.eq{grid-template-columns:260px 1fr;align-items:center;padding:30px 36px}}
+.eq-l{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--ivoire-mute)}
+.eq-r{font-family:var(--font-display);font-size:clamp(1.6rem,4.4vw,2.6rem);line-height:1.12}
+.eq-a{border:1px solid var(--line);background:#100d0e}
+.eq-a .eq-r{color:var(--ivoire-mute)}
+.eq-b{border:1px solid rgba(232,180,188,.25);background:radial-gradient(70% 120% at 100% 50%,rgba(var(--signature-rgb),.14),transparent 70%),#140f11}
+.eq-b .eq-l{color:var(--poudre)}
+.eq-b .eq-r em{font-style:italic}
+.eq-b .plus{color:var(--signature);font-style:normal;padding:0 .12em}
+
+/* ============================ APPS ============================ */
+.apps{display:grid;gap:48px;align-items:center}
+@media(min-width:960px){.apps{grid-template-columns:1fr 1fr;gap:64px}}
+.app-phones{display:flex;justify-content:center;gap:16px;position:relative}
+.aph{width:min(210px,44vw);aspect-ratio:9/19;border-radius:34px;padding:7px;background:linear-gradient(145deg,#2a2426,#0f0c0d 45%,#1d1719);box-shadow:0 0 0 1px rgba(255,255,255,.07) inset,0 40px 80px -40px #000}
+.aph:nth-child(2){margin-top:48px}
+.aph-s{height:100%;border-radius:28px;overflow:hidden;background:#100c0e;padding:28px 12px 12px;display:flex;flex-direction:column;gap:8px;font-size:10px;position:relative}
+.aph-s::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:34%;height:14px;border-radius:10px;background:#000}
+.aph-t{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--champagne);font-weight:700}
+.aph-h{font-family:var(--font-display);font-size:17px;line-height:1.1}
+.aph-card{border-radius:14px;background:rgba(243,236,230,.05);border:1px solid var(--line);padding:10px}
+.aph-card b{font-family:var(--font-display);font-size:20px;font-weight:500;display:block;line-height:1}
+.aph-card small{color:var(--ivoire-mute);font-size:8.5px}
+.aph-bars{display:flex;align-items:flex-end;gap:3px;height:34px;margin-top:8px}
+.aph-bars i{flex:1;border-radius:2px;background:linear-gradient(var(--poudre),var(--mauve));opacity:.85}
+.aph-n{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);color:var(--ivoire-dim);font-size:9px}
+.aph-n .avatar{font-size:8px!important}
+.aph-stories{display:flex;gap:6px}
+.aph-stories span{padding:2px;border-radius:50%;background:var(--grad-signature)}
+.aph-stories .avatar{box-shadow:0 0 0 2px #100c0e}
+.aph-post{flex:1;border-radius:14px;overflow:hidden;position:relative;min-height:0}
+.aph-post svg{position:absolute;inset:0;filter:blur(6px);transform:scale(1.2)}
+.aph-post div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#fff;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.aph-post button{background:#fff;color:#1a1214;padding:5px 10px;border-radius:99px;font-size:9px;font-weight:700;letter-spacing:0;text-transform:none}
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.store{display:flex;align-items:center;gap:10px;padding:.7em 1.1em;border-radius:14px;border:1px solid var(--line-2);font-size:.78rem;color:var(--ivoire-dim)}
+.store svg{width:20px;height:20px;color:var(--ivoire)}
+.store b{display:block;color:var(--ivoire);font-size:.92rem;font-weight:600}
+.store em{font-style:normal;margin-left:6px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--poudre);border:1px solid rgba(232,180,188,.3);padding:.2em .55em;border-radius:99px}
+.app-duo{display:grid;gap:12px;margin-top:24px}
+@media(min-width:560px){.app-duo{grid-template-columns:1fr 1fr}}
+.app-duo div{padding:16px 18px;border-radius:var(--r-lg);border:1px solid var(--line)}
+.app-duo b{display:block;font-family:var(--font-display);font-size:1.3rem;font-weight:500}
+.app-duo span{font-size:.84rem;color:var(--ivoire-dim)}
+
+/* ============================ SÉCURITÉ ============================ */
+.sec-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden}
+@media(min-width:640px){.sec-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.sec-grid{grid-template-columns:repeat(3,1fr)}}
+.sec-grid > div{background:var(--noir);padding:28px 24px;transition:background .4s}
+.sec-grid > div:hover{background:#110d0f}
+.sec-grid svg{width:26px;height:26px;color:var(--poudre);margin-bottom:18px}
+.sec-grid h3{font-family:var(--font-display);font-weight:500;font-size:1.5rem;line-height:1.1;margin-bottom:6px}
+.sec-grid p{color:var(--ivoire-dim);font-size:.9rem}
+
+/* ============================ TARIFS ============================ */
+.prices{display:grid;gap:14px}
+@media(min-width:720px){.prices{grid-template-columns:1fr 1fr}}
+@media(min-width:1120px){.prices{grid-template-columns:repeat(4,1fr)}}
+.price{border-radius:var(--r-xl);padding:28px 24px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(243,236,230,.04),rgba(243,236,230,.01));display:flex;flex-direction:column;position:relative}
+.price.feat{border:1px solid transparent;background:linear-gradient(180deg,#1b1316,#130e10) padding-box,var(--grad-signature) border-box;box-shadow:0 40px 80px -40px rgba(var(--signature-rgb),.5)}
+.price .badge{position:absolute;top:-11px;left:24px;background:var(--grad-signature);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:.45em .9em;border-radius:99px}
+.price h3{font-size:.76rem;letter-spacing:.26em;font-weight:800;color:var(--champagne)}
+.price .amt{font-family:var(--font-display);font-size:3rem;font-weight:500;line-height:1;margin:14px 0 4px}
+.price .amt small{font-family:var(--font-ui);font-size:.8rem;color:var(--ivoire-mute);font-weight:500}
+.price .for{font-size:.86rem;color:var(--ivoire-dim);min-height:2.8em}
+.price .com{display:flex;justify-content:space-between;align-items:center;margin:18px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.8rem;color:var(--ivoire-dim)}
+.price .com b{font-family:var(--font-display);font-size:1.35rem;font-weight:500;color:var(--ivoire)}
+.price ul{list-style:none;display:grid;gap:9px;margin-bottom:26px;font-size:.86rem;color:var(--ivoire-dim)}
+.price li{display:grid;grid-template-columns:16px 1fr;gap:10px}
+.price li svg{width:14px;height:14px;margin-top:.25em;color:var(--poudre)}
+.price .btn{margin-top:auto;width:100%}
+.price-note{text-align:center;color:var(--ivoire-mute);font-size:.8rem;margin-top:22px}
+
+/* ============================ FAQ ============================ */
+.faq{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--font-display);font-size:clamp(1.25rem,3.4vw,1.6rem);line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);position:relative;transition:transform .35s var(--ease),border-color .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--ivoire);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg);border-color:var(--poudre)}
+.faq summary:hover i{border-color:var(--poudre)}
+.faq details p{color:var(--ivoire-dim);padding:0 44px 24px 0;max-width:680px}
+
+/* ============================ CTA FINAL ============================ */
+.final{position:relative;text-align:center;padding:120px 0 110px;overflow:hidden}
+.final::before{content:"";position:absolute;left:50%;top:50%;width:900px;height:600px;max-width:180vw;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(var(--signature-rgb),.18),rgba(156,127,166,.08) 50%,transparent);pointer-events:none}
+.final .mono{width:72px;height:72px;margin:0 auto 28px;position:relative}
+.rot{position:relative;height:2.2em;font-family:var(--font-display);font-size:clamp(2.2rem,7vw,5rem);line-height:1.05;margin:.2em 0 .4em}
+.rot span{position:absolute;left:0;right:0;top:0;opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease),transform .9s var(--ease);font-style:italic}
+.rot span.on{opacity:1;transform:none}
+@media(max-width:600px){.rot{height:2.2em}}
+.final p{color:var(--ivoire-dim);max-width:520px;margin:0 auto 34px;position:relative}
+.final .acts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;position:relative}
+
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="aura" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<header data-nav></header>
+
+<main id="main">
+
+<!-- =============================== HERO =============================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-logo" data-plx="0.28">
+    <picture>
+      <source srcset="assets/logo-hero.webp" type="image/webp">
+      <img src="assets/logo-hero.jpg" width="1400" height="505" alt="SECR3TLY — logo, le 3 lumineux en rose poudré" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="container hero-copy">
+    <p class="eyebrow">La plateforme des créateurs</p>
+    <h1 id="hero-title" class="display"><span class="l">One creator.</span> <span class="l">One universe.</span> <span class="l"><em class="nacre">One link.</em></span></h1>
+    <p class="hero-sub">Votre identité, vos contenus exclusifs, votre communauté, vos abonnés, votre boutique et vos revenus — réunis dans un univers qui vous appartient, sur votre propre nom de domaine.</p>
+
+    <form class="claim" id="claim" novalidate>
+      <label for="claim-in" class="sr-only">Choisissez l’adresse de votre univers</label>
+      <div class="claim-box" id="claim-box">
+        <span class="claim-pre" aria-hidden="true">secr<b>3</b>tly.com/</span>
+        <input id="claim-in" name="handle" type="text" inputmode="url" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="30" placeholder="votre-nom" aria-describedby="claim-msg">
+        <button class="btn btn-sig" type="submit">Réserver</button>
+      </div>
+      <p class="claim-msg" id="claim-msg" aria-live="polite">Gratuit · sans carte bancaire · votre nom, avant qu’un autre ne le prenne.</p>
+    </form>
+    <div class="hero-alt">
+      <a href="https://cronobots.github.io/AUDACE/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>Voir un univers réel <span aria-hidden="true">↗</span></a>
+      <a href="explore.html">Explorer les créateurs</a>
+    </div>
+    <div class="hero-facts" aria-label="En bref">
+      <span>14 thèmes</span><span>4 niveaux d’accès</span><span>Votre domaine</span><span>0 algorithme</span>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<!-- =========================== CONTRASTE =========================== -->
+<section class="sec" id="univers" aria-labelledby="vs-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="n">01</span>Le concept</p>
+      <h2 id="vs-title">Pas une liste de liens. <em class="grad-text">Un univers.</em></h2>
+      <p>Les autres outils renvoient votre audience ailleurs. SECR3TLY la fait entrer chez vous — et lui donne mille raisons de rester.</p>
+    </div>
+    <div class="versus">
+      <article class="vs vs-a reveal" aria-label="Un outil de liens classique">
+        <p class="vs-label">Linktree</p>
+        <q>Voici mes liens.</q>
+        <span class="pill">Instagram</span><span class="pill">TikTok</span><span class="pill">YouTube</span><span class="pill">Ma boutique</span>
+        <p class="note">Un carrefour. On clique, on repart. Vous ne savez pas qui est passé.</p>
+      </article>
+      <article class="vs vs-b reveal" aria-label="Un univers SECR3TLY">
+        <p class="vs-label">SECR<span class="sig">3</span>TLY</p>
+        <q class="nacre">Voici mon univers.</q>
+        <div class="uni" id="vs-uni"></div>
+      </article>
+    </div>
+    <div class="contrasts reveal">
+      <div><s>Des liens qui font partir</s><strong>Un lieu où l’on reste</strong></div>
+      <div><s>Une audience louée aux algorithmes</s><strong>Une communauté qui vous appartient</strong></div>
+      <div><s>Des clics anonymes</s><strong>Des membres, des clients, des revenus</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SHOWCASE ============================ -->
+<section class="sec" id="showcase" aria-labelledby="show-title" style="padding-top:0">
+  <div class="container">
+    <div class="show">
+      <div class="phone-wrap reveal" data-plx="-0.06">
+        <div class="phone">
+          <img src="assets/showcase/audace-hero.webp" width="780" height="1688" loading="lazy" alt="Capture de l’univers Secr3tly en ligne : portrait de la créatrice, réseaux sociaux et statistiques d’audience">
+        </div>
+        <span class="phone-tag glass"><span class="dot" aria-hidden="true"></span>En ligne</span>
+        <span class="phone-tag phone-tag2 glass"><span class="lvl lvl-vip">VIP</span> Accès privé</span>
+      </div>
+      <div class="show-copy reveal">
+        <p class="eyebrow"><span class="n">02</span>Exemple réel</p>
+        <div class="sec-head" style="margin-bottom:0">
+          <h2 id="show-title">L’univers Secr3tly, <em>en ligne.</em></h2>
+          <p>Pas une maquette : un univers réel, construit avec SECR3TLY, pour une créatrice fitness &amp; lifestyle. Son identité, ses réseaux, son audience et son accès privé, au même endroit.</p>
+        </div>
+        <ul>
+          <li>Une identité visuelle qui ressemble à la créatrice, pas à la plateforme</li>
+          <li>Tous ses réseaux et ses chiffres d’audience en un coup d’œil</li>
+          <li>Un espace exclusif pour transformer les abonnés en membres</li>
+        </ul>
+        <a class="btn btn-primary" href="https://cronobots.github.io/AUDACE/" target="_blank" rel="noopener">Visiter l’univers <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
+    <div class="row-head reveal">
+      <h3>Six créateurs. <em>Six univers.</em></h3>
+      <div class="row-nav">
+        <button type="button" data-rail="-1" aria-label="Univers précédents"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" data-rail="1" aria-label="Univers suivants"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="rail" id="rail" aria-label="Univers de démonstration"></div>
+  </div>
+</section>
+
+<!-- =========================== ACCÈS =========================== -->
+<section class="sec" id="acces" aria-labelledby="acc-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="n">03</span>Niveaux d’accès</p>
+      <h2 id="acc-title">Chaque contenu a <em>sa porte.</em></h2>
+      <p>Public, Members, VIP, Private : vous décidez qui voit quoi, pièce par pièce. Choisissez un niveau pour visiter l’univers de Lena comme ses membres.</p>
+    </div>
+    <div class="access">
+      <div class="lv-list reveal" id="lv-list" role="group" aria-label="Niveau du visiteur"></div>
+      <div class="ad reveal">
+        <div class="ad-head" id="ad-head"></div>
+        <div class="ad-grid" id="ad-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FONCTIONNALITÉS ========================= -->
+<section class="sec" id="fonctionnalites" aria-labelledby="feat-title">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <p class="eyebrow"><span class="n">04</span>Un seul système</p>
+      <h2 id="feat-title">Tout gravite <em>autour de vous.</em></h2>
+      <p>Contenus, abonnements, boutique, communauté, CRM, statistiques : douze outils qui se parlent, au lieu de douze abonnements qui s’ignorent.</p>
+    </div>
+    <div class="sys">
+      <div class="orbit reveal" id="orbit">
+        <svg class="orbit-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs><linearGradient id="olg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8b4bc"/><stop offset="1" stop-color="#d4467e"/></linearGradient></defs>
+          <g id="orbit-lines"></g>
+        </svg>
+        <div class="ring r1" aria-hidden="true"></div><div class="ring r2" aria-hidden="true"></div>
+        <div class="core" aria-hidden="true"><div><strong>Vous</strong><small>votre univers</small></div></div>
+        <div id="orbit-nodes" role="group" aria-label="Fonctionnalités"></div>
+      </div>
+      <div class="panel glass reveal" aria-live="polite"><div class="panel-body" id="panel"></div></div>
+    </div>
+
+    <div class="bento">
+      <article class="b b-links card reveal">
+        <h3>Smart Links</h3>
+        <p>Un lien pour chaque intention, suivi et partageable en QR.</p>
+        <div class="sl"><ul id="sl-list"></ul><div class="qr-box" id="sl-qr"></div></div>
+      </article>
+      <article class="b b-an card reveal">
+        <h3>Analytics</h3>
+        <p>Audience et business, enfin sur le même écran.</p>
+        <div class="kpis" id="kpis"></div>
+        <svg class="spark" id="spark" viewBox="0 0 600 110" preserveAspectRatio="none" role="img" aria-label="Revenus des 30 derniers jours, en hausse"></svg>
+        <div class="spark-cap"><span>Il y a 30 jours</span><span>Revenus quotidiens</span><span>Aujourd’hui</span></div>
+      </article>
+      <article class="b b-crm card reveal">
+        <h3>CRM &amp; segments</h3>
+        <p>Chaque abonné devient une relation que vous pouvez retrouver.</p>
+        <div class="segs" id="segs"></div>
+      </article>
+      <article class="b b-ai card reveal">
+        <h3>Copilote IA</h3>
+        <p>Votre assistant éditorial, commercial et stratégique.</p>
+        <div class="chat">
+          <div class="bub me">Prépare l’annonce de mon live VIP de jeudi, pour mes membres inactifs.</div>
+          <div class="bub ai"><small>Copilote</small>« Jeudi 20 h, je vous ouvre mon dressing en privé… » — envoyé au segment <b>Inactifs 30 j</b> (412 membres) par message et push. Taux d’ouverture estimé&nbsp;: 48&nbsp;%.</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ THÈMES ============================ -->
+<section class="sec" id="themes" aria-labelledby="th-title">
+  <div class="container">
+    <div class="themes">
+      <div>
+        <div class="sec-head reveal">
+          <p class="eyebrow"><span class="n">05</span>14 thèmes</p>
+          <h2 id="th-title">Votre univers, <em>à votre image.</em></h2>
+          <p>Choisissez un point de départ, puis personnalisez chaque élément : couleurs, typographies, boutons, cartes, fonds, transparences, ombres, animations. Touchez un thème pour le voir vivre.</p>
+        </div>
+        <div class="th-list reveal" id="th-list" role="group" aria-label="Thèmes"></div>
+      </div>
+      <div class="th-stage reveal">
+        <div id="th-preview"></div>
+        <dl class="th-spec glass" id="th-spec"></dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DOMAINE ============================ -->
+<section class="sec" id="domaine" aria-labelledby="dom-title">
+  <div class="container">
+    <div class="dom">
+      <div class="reveal">
+        <p class="eyebrow"><span class="n">06</span>Domaine personnalisé</p>
+        <div class="sec-head" style="margin-bottom:0">
+          <h2 id="dom-title">Votre nom. <em>Votre domaine.</em></h2>
+          <p>Votre univers vit à votre adresse. SECR3TLY travaille en coulisses — invisible, sauf une signature discrète.</p>
+        </div>
+        <ol class="steps">
+          <li><div><b>Commencez sur secr3tly.com/votre-nom</b><span>Votre lien est prêt en une minute, avec ses smart links.</span></div></li>
+          <li><div><b>Connectez votre propre domaine</b><span>SSL, performances et référencement configurés automatiquement.</span></div></li>
+          <li><div><b>SECR3TLY s’efface</b><span>Seule reste la mention « Powered by SECR3TLY », en tout petit.</span></div></li>
+        </ol>
+      </div>
+      <div class="browser reveal" aria-label="Aperçu d’un univers sur un domaine personnalisé">
+        <div class="br-bar">
+          <div class="br-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="br-url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span id="br-url">lenamoreau.com</span><span class="caret" aria-hidden="true"></span></div>
+        </div>
+        <div class="br-page" id="br-page"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VISION ============================ -->
+<section class="sec" id="vision" aria-labelledby="vis-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="n">07</span>Le parcours</p>
+      <h2 id="vis-title">Les réseaux font découvrir. <em>Votre univers fait rester.</em></h2>
+      <p>De la curiosité à la communauté, chaque étape se passe chez vous — et chaque visite construit une relation durable.</p>
+    </div>
+    <ol class="journey reveal">
+      <li><div><b>Arrive</b><span>Depuis une story, une vidéo, un QR code.</span></div></li>
+      <li><div><b>Découvre</b><span>Votre identité, vos contenus, votre ton.</span></div></li>
+      <li><div><b>S’abonne</b><span>Gratuit d’abord, premium ensuite.</span></div></li>
+      <li><div><b>Interagit</b><span>Commentaires, réactions, messages.</span></div></li>
+      <li><div><b>Achète</b><span>Contenus, produits, événements.</span></div></li>
+      <li><div><b>Devient membre</b><span>VIP, Private, communauté.</span></div></li>
+      <li><div><b>Reste connecté</b><span>Sans dépendre d’aucun algorithme.</span></div></li>
+    </ol>
+    <div class="equation">
+      <div class="eq eq-a reveal"><span class="eq-l">Réseaux sociaux</span><span class="eq-r">= acquisition.</span></div>
+      <div class="eq eq-b reveal"><span class="eq-l">SECR<span class="sig">3</span>TLY</span><span class="eq-r"><em>= relation</em><span class="plus">+</span>communauté<span class="plus">+</span>contenu<span class="plus">+</span>commerce<span class="plus">+</span>business.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ APPS ============================ -->
+<section class="sec" id="apps" aria-labelledby="apps-title">
+  <div class="container">
+    <div class="apps">
+      <div class="app-phones reveal" aria-hidden="true" id="app-phones"></div>
+      <div class="reveal">
+        <p class="eyebrow"><span class="n">08</span>Mobile first</p>
+        <div class="sec-head" style="margin-bottom:0">
+          <h2 id="apps-title">Votre univers, <em>dans la poche.</em></h2>
+          <p>Pensé d’abord pour le mobile, là où vit votre audience. Deux applications arrivent pour prolonger l’expérience.</p>
+        </div>
+        <div class="app-duo">
+          <div><b>SECR3TLY Studio</b><span>Pour les créateurs : publier, répondre, suivre les revenus en temps réel.</span></div>
+          <div><b>SECR3TLY</b><span>Pour les fans : suivre ses univers, débloquer, échanger, ne rien manquer.</span></div>
+        </div>
+        <div class="stores">
+          <span class="store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 5c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z"/></svg><span>iOS<b>App Store</b></span><em>Bientôt</em></span>
+          <span class="store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.2.9.4 1.2l10-10.2-10-10.2zm11.1 11.3l2.6 2.6-11.9 6.8 9.3-9.4zm0-2.2L5.4 1.5l11.9 6.8-2.6 2.6zm3.8.1l2.9 1.6c.8.5.8 1.3 0 1.8l-2.9 1.6-2.8-2.8 2.8-2.2z"/></svg><span>Android<b>Google Play</b></span><em>Bientôt</em></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SÉCURITÉ ============================ -->
+<section class="sec" id="securite" aria-labelledby="secu-title">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="n">09</span>Sécurité &amp; confidentialité</p>
+      <h2 id="secu-title">Vos secrets <em>restent secrets.</em></h2>
+      <p>Une plateforme bâtie autour de l’exclusivité se doit d’être irréprochable sur la protection.</p>
+    </div>
+    <div class="sec-grid reveal">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><h3>Contrôle d’accès</h3><p>Quatre niveaux, des accès temporaires ou permanents, des invitations nominatives.</p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Protection des contenus</h3><p>Filigrane nominatif, liens expirants, lecture sans téléchargement.</p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><h3>Modération</h3><p>Filtres automatiques, signalements et outils pour garder une communauté bienveillante.</p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><h3>Conformité RGPD</h3><p>Consentements tracés, données hébergées en Europe, transparence totale.</p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><h3>Export &amp; suppression</h3><p>Vos abonnés vous appartiennent : exportez-les ou supprimez tout, à tout moment.</p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg><h3>Paiements sécurisés</h3><p>Transactions chiffrées, anti-fraude, versements réguliers sur votre compte.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TARIFS ============================ -->
+<section class="sec" id="tarifs" aria-labelledby="price-title">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <p class="eyebrow"><span class="n">10</span>Tarifs</p>
+      <h2 id="price-title">Commencez gratuitement. <em>Grandissez librement.</em></h2>
+      <p>Un abonnement simple et une commission qui baisse à mesure que votre univers grandit.</p>
+    </div>
+    <div class="prices" id="prices"></div>
+    <p class="price-note">Prix HT. La commission s’applique aux transactions réalisées dans votre univers (abonnements, contenus, boutique, événements).</p>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="sec" id="faq" aria-labelledby="faq-title" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2 id="faq-title">Tout ce que <em>vous vous demandez.</em></h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>En quoi SECR3TLY est-il différent d’un Linktree&nbsp;?<i aria-hidden="true"></i></summary><p>Un Linktree dit « voici mes liens » et renvoie votre audience ailleurs. SECR3TLY dit « voici mon univers » : vos contenus exclusifs, vos abonnements, votre boutique, votre communauté et vos statistiques vivent au même endroit, chez vous.</p></details>
+      <details><summary>Puis-je utiliser mon propre nom de domaine&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Commencez avec secr3tly.com/votre-nom, puis connectez votre domaine (par exemple lenamoreau.com) dès l’offre Pro. Le certificat SSL et le référencement sont gérés pour vous.</p></details>
+      <details><summary>Comment suis-je rémunéré·e&nbsp;?<i aria-hidden="true"></i></summary><p>Abonnements, contenus à l’unité, pourboires, produits numériques et physiques, bundles, billetterie, affiliation, codes promo et partenariats. Les revenus vous sont reversés régulièrement, après déduction de la commission de votre offre.</p></details>
+      <details><summary>Mes abonnés m’appartiennent-ils vraiment&nbsp;?<i aria-hidden="true"></i></summary><p>Oui. Votre CRM est à vous : segmentez, contactez par message, newsletter ou notification, et exportez vos données à tout moment. Aucun algorithme ne s’interpose entre vous et votre communauté.</p></details>
+      <details><summary>Mes contenus exclusifs sont-ils protégés&nbsp;?<i aria-hidden="true"></i></summary><p>Chaque contenu a son niveau d’accès (Public, Members, VIP, Private), ses éventuelles limites de temps et un filigrane nominatif. Les liens sont expirants et la modération est intégrée.</p></details>
+      <details><summary>Faut-il savoir coder ou designer&nbsp;?<i aria-hidden="true"></i></summary><p>Non. Choisissez l’un des 14 thèmes, ajustez chaque détail dans le Studio, et laissez le copilote IA vous aider à écrire, planifier et vendre.</p></details>
+      <details><summary>Et les applications mobiles&nbsp;?<i aria-hidden="true"></i></summary><p>Votre univers est déjà parfaitement mobile. Les applications iOS et Android — une pour les créateurs, une pour les fans — arrivent bientôt.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA FINAL ============================ -->
+<section class="final" aria-labelledby="final-title">
+  <div class="container">
+    <svg class="mono reveal" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c5cf"/><stop offset=".55" stop-color="#d4467e"/><stop offset="1" stop-color="#9c7fa6"/></linearGradient></defs><rect x="1" y="1" width="62" height="62" rx="16" fill="#140f11" stroke="rgba(232,180,188,.3)"/><path d="M21 17.5h22L31.5 30.5c7.5-.9 13 3.2 13 9.7 0 6.6-5.3 10.8-12.4 10.8-4.3 0-8.2-1.5-10.9-4.2" fill="none" stroke="url(#mg)" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2 id="final-title" class="sr-only">Créez votre univers</h2>
+    <p class="eyebrow reveal">Your world. Behind one link.</p>
+    <div class="rot" id="rot" aria-hidden="true"></div>
+    <p class="reveal">Réservez votre nom aujourd’hui. Votre univers vous attend — et votre communauté aussi.</p>
+    <div class="acts reveal">
+      <a class="btn btn-primary" href="studio/">Créer mon univers</a>
+      <a class="btn btn-ghost" href="explore.html">Explorer les univers</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer data-foot></footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/themes.js"></script>
+<script src="assets/ui.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  'use strict';
+  var S = window.Secretly, T = window.SecretlyThemes, UI = window.SecretlyUI;
+  var esc = S.esc;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s) { return document.querySelector(s); }
+  var LOCK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  var creators = S.getCreators();
+  var byHandle = {}; creators.forEach(function (c) { byHandle[c.handle] = c; });
+  var lena = byHandle.lena || S.seedCreator('lena');
+  var LVNAME = { public: 'Public', members: 'Members', vip: 'VIP', private: 'Private' };
+
+  /* Précharge les polices de tous les thèmes (1 requête) */
+  var fonts = {};
+  Object.keys(T.PRESETS).forEach(function (k) { fonts[T.PRESETS[k].display] = 1; fonts[T.PRESETS[k].body] = 1; });
+  creators.forEach(function (c) { var t = T.resolve(c.theme); fonts[t.display] = 1; fonts[t.body] = 1; });
+  T.loadFonts(Object.keys(fonts));
+
+  function themeStyle(themeCfg) {
+    var t = T.resolve(themeCfg), v = T.cssVars(t), out = '';
+    for (var k in v) out += k + ':' + v[k] + ';';
+    return { t: t, style: out + '--t-background:' + T.backgroundCss(t) };
+  }
+
+  /* ------------------------------------------------------------ Réservation du nom */
+  var RESERVED = ['studio', 'explore', 'c', 'assets', 'docs', 'admin', 'api', 'app', 'www', 'help', 'aide', 'login', 'signup', 'settings', 'shop', 'vip', 'secretly'];
+  var form = $('#claim'), input = $('#claim-in'), msg = $('#claim-msg'), box = $('#claim-box');
+  var defaultMsg = msg.textContent;
+  function norm(v) { return String(v || '').trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^(www\.)?secr3tly\.com\//, '').replace(/^@/, ''); }
+  function check(h) {
+    if (!h) return { ok: false, m: 'Choisissez un nom pour votre univers.' };
+    if (h.length < 3) return { ok: false, m: 'Au moins 3 caractères.' };
+    if (!/^[a-z0-9][a-z0-9._-]*[a-z0-9]$/.test(h)) return { ok: false, m: 'Lettres minuscules, chiffres, point, tiret ou underscore uniquement.' };
+    if (RESERVED.indexOf(h) >= 0) return { ok: false, m: '« ' + h + ' » est un nom réservé.' };
+    if (S.getCreator(h)) return { ok: false, m: 'secr3tly.com/' + h + ' est déjà pris. Essayez une variante.' };
+    return { ok: true, m: 'secr3tly.com/' + h + ' est disponible.' };
+  }
+  function show(r, strict) {
+    msg.textContent = r.m; msg.className = 'claim-msg ' + (r.ok ? 'ok' : 'err');
+    box.classList.toggle('bad', !r.ok && strict);
+  }
+  input.addEventListener('input', function () {
+    var h = norm(input.value);
+    if (!h) { msg.textContent = defaultMsg; msg.className = 'claim-msg'; box.classList.remove('bad'); return; }
+    show(check(h), false);
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var h = norm(input.value), r = check(h);
+    show(r, true);
+    if (!r.ok) { input.focus(); return; }
+    S.store.set('claim', h);
+    msg.textContent = 'Parfait. Direction votre Studio…';
+    setTimeout(function () { location.href = S.BASE + 'studio/?claim=' + encodeURIComponent(h); }, 450);
+  });
+
+  /* ------------------------------------------------------------ Contraste : mini univers */
+  (function () {
+    var p = lena.posts || [];
+    var pub = p[0], vip = p[2] || p[1];
+    $('#vs-uni').innerHTML =
+      '<div class="u-id">' + UI.avatar(lena, 46) + '<div><strong>' + esc(lena.name) + '</strong><small>' + esc(lena.tagline) + '</small></div></div>' +
+      '<div class="u-art">' + UI.art(pub.art) + '<span class="lvl lvl-public">Public</span></div>' +
+      '<div class="u-art lock">' + UI.art(vip.art) + '<span class="lk">' + LOCK + '</span><span class="lvl lvl-vip">VIP</span></div>' +
+      '<div class="u-k"><span>Membres</span><b>' + S.compact(lena.stats.members) + '</b></div>' +
+      '<div class="u-k"><span>Boutique</span><b>' + (lena.products || []).length + '</b></div>' +
+      '<div class="u-k"><span>Événements</span><b>' + (lena.events || []).length + '</b></div>';
+  })();
+
+  /* ------------------------------------------------------------ Mini univers (téléphones) */
+  function linksFor(c) {
+    var out = (c.links || []).slice(0, 3).map(function (l) { return l.label; });
+    var paid = (c.tiers || []).filter(function (t) { return t.price > 0; });
+    if (out.length < 3 && paid.length) out.push('Rejoindre « ' + paid[paid.length - 1].name + ' »');
+    if (out.length < 3 && (c.products || []).length) out.push('Boutique · ' + c.products.length + ' créations');
+    if (out.length < 3 && (c.events || []).length) out.push('Événements à venir');
+    if (out.length < 3) out.push('Newsletter privée');
+    return out.slice(0, 3);
+  }
+  function mini(c, themeCfg) {
+    var th = themeStyle(themeCfg || c.theme);
+    var posts = c.posts || [];
+    var open = posts.filter(function (p) { return p.access === 'public'; })[0] || (c.products || [])[0] || { art: c.cover };
+    var locked = posts.filter(function (p) { return p.access !== 'public'; })[0] || { art: c.cover, access: 'members' };
+    return '<div class="mini"><div class="mini-screen" style="' + th.style + '">' +
+      '<div class="mini-cover">' + UI.art(c.cover) + '</div>' +
+      '<div class="mini-body">' + UI.avatar(c, 56) +
+        '<div class="mini-name">' + esc(c.name) + '</div>' +
+        '<div class="mini-tag">' + esc(c.tagline) + '</div>' +
+        '<div class="mini-stats"><span><b>' + S.compact(c.stats.followers) + '</b> abonnés</span><span><b>' + S.compact(c.stats.members) + '</b> membres</span></div>' +
+        linksFor(c).map(function (l, i) { return '<span class="mini-btn' + (i === 0 ? ' acc' : '') + '">' + esc(l) + '</span>'; }).join('') +
+        '<div class="mini-grid"><div class="mini-tile">' + UI.art(open.art) + '</div>' +
+        '<div class="mini-tile lock">' + UI.art(locked.art) + '<div class="mini-lock">' + LOCK + (LVNAME[locked.access] || 'Members') + '</div></div></div>' +
+      '</div>' +
+      '<div class="mini-url">secr3tly.com/' + esc(c.handle) + '</div>' +
+    '</div></div>';
+  }
+  var rail = $('#rail');
+  rail.innerHTML = creators.filter(function (c) { return !c.externalUrl && c.posts; }).slice(0, 6).map(function (c) {
+    var t = T.resolve(c.theme);
+    return '<a href="' + S.BASE + 'c/?u=' + encodeURIComponent(c.handle) + '" aria-label="Visiter l’univers de ' + esc(c.name) + ' (thème ' + t.name + ')">' + mini(c) +
+      '<span class="rail-cap"><b>' + esc(c.name) + '</b>' + esc(c.category) + ' · thème ' + t.name + '</span></a>';
+  }).join('');
+  document.querySelectorAll('[data-rail]').forEach(function (b) {
+    b.addEventListener('click', function () { rail.scrollBy({ left: Number(b.getAttribute('data-rail')) * 516, behavior: reduce ? 'auto' : 'smooth' }); });
+  });
+
+  /* ------------------------------------------------------------ Niveaux d'accès : démo */
+  var LV_ICON = {
+    public: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+    members: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/></svg>',
+    vip: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></svg>',
+    private: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 7a4 4 0 1 1-1.3 7.8L11 17.5H9v2H7v2H3v-3.5l6.2-6.2A4 4 0 0 1 15 7z"/><circle cx="16" cy="10" r="1"/></svg>'
+  };
+  var LV_TXT = {
+    public: 'Publications, liens et boutique, ouverts à tous.',
+    members: 'Coulisses, albums complets et discussions entre membres.',
+    vip: 'Lives privés, vidéos premium et avantages boutique.',
+    private: 'Sur invitation : lettres privées, 1:1, événements.'
+  };
+  var tierBy = {}; (lena.tiers || []).forEach(function (t) { tierBy[t.level] = t; });
+  var level = 'public', bought = {};
+  var demoPosts = (lena.posts || []).slice(0, 6);
+  var TYPE = { photo: 'Photo', album: 'Album', video: 'Vidéo', ppv: 'À l’unité', story: 'Story 24 h', bundle: 'Bundle' };
+  $('#lv-list').innerHTML = S.LEVELS.map(function (L) {
+    var t = tierBy[L.id];
+    var pr = !t || !t.price ? 'Gratuit' : S.money(t.price) + '<small>/mois</small>';
+    return '<button type="button" class="lv" data-lv="' + L.id + '" aria-pressed="false">' +
+      '<span class="lv-ico" aria-hidden="true">' + LV_ICON[L.id] + '</span>' +
+      '<h3><span class="lvl lvl-' + L.id + '">' + L.name + '</span></h3>' +
+      '<span class="pr">' + pr + '</span>' +
+      '<p>' + LV_TXT[L.id] + '</p></button>';
+  }).join('');
+  function isLocked(p) {
+    if (p.price && p.access === 'public') return !bought[p.id];
+    return S.RANK[p.access] > S.RANK[level];
+  }
+  function renderAccess(prev) {
+    document.querySelectorAll('.lv').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lv') === level ? 'true' : 'false'); });
+    var open = demoPosts.filter(function (p) { return !isLocked(p); }).length;
+    $('#ad-head').innerHTML = UI.avatar(lena, 40) +
+      '<div><strong>Univers de ' + esc(lena.name) + '</strong><small>Vous visitez en tant que <b class="sig">' + LVNAME[level] + '</b> · ' + open + ' contenus sur ' + demoPosts.length + ' débloqués</small>' +
+      '<div class="ad-meter"><i style="width:' + Math.round(open / demoPosts.length * 100) + '%"></i></div></div>';
+    var grid = $('#ad-grid');
+    if (!grid.children.length) {
+      grid.innerHTML = demoPosts.map(function (p) {
+        var meta = TYPE[p.type] || 'Contenu';
+        if (p.duration) meta += ' · ' + p.duration;
+        if (p.count) meta += ' · ' + p.count + ' photos';
+        var badge = p.price && p.access === 'public' ? '<span class="lvl lvl-members">' + S.money(p.price) + '</span>' : '<span class="lvl lvl-' + p.access + '">' + LVNAME[p.access] + '</span>';
+        var need = p.price && p.access === 'public' ? '<span>À l’unité · ' + S.money(p.price) + '</span><button type="button" data-buy="' + p.id + '">Acheter</button>'
+          : '<span>Réservé ' + LVNAME[p.access] + '</span><button type="button" data-need="' + p.access + '">Débloquer</button>';
+        return '<article class="ad-tile" data-id="' + p.id + '">' + UI.art(p.art, { label: p.title }) +
+          '<div class="ad-meta">' + badge + '<h4>' + esc(p.title) + '</h4><small>' + meta + '</small></div>' +
+          '<div class="ad-lock">' + LOCK + need + '</div></article>';
+      }).join('');
+    }
+    demoPosts.forEach(function (p) {
+      var el = grid.querySelector('[data-id="' + p.id + '"]');
+      var was = el.classList.contains('locked'), now = isLocked(p);
+      el.classList.toggle('locked', now);
+      el.querySelector('.ad-lock').setAttribute('aria-hidden', now ? 'false' : 'true');
+      el.querySelectorAll('.ad-lock button').forEach(function (b) { b.tabIndex = now ? 0 : -1; });
+      if (prev && was && !now && !reduce) { el.classList.remove('just'); void el.offsetWidth; el.classList.add('just'); }
+    });
+  }
+  $('#lv-list').addEventListener('click', function (e) {
+    var b = e.target.closest('.lv'); if (!b) return;
+    level = b.getAttribute('data-lv'); renderAccess(true);
+  });
+  $('#ad-grid').addEventListener('click', function (e) {
+    var need = e.target.closest('[data-need]'), buy = e.target.closest('[data-buy]');
+    if (need) { level = need.getAttribute('data-need'); renderAccess(true); UI.toast('Bienvenue dans le cercle ' + LVNAME[level] + ' ✦'); }
+    if (buy) { bought[buy.getAttribute('data-buy')] = 1; renderAccess(true); UI.toast('Contenu débloqué — accès permanent'); }
+  });
+  renderAccess(false);
+
+  /* ------------------------------------------------------------ Orbite des fonctionnalités */
+  var I = function (d) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + d + '</svg>'; };
+  var FEATURES = [
+    { n: 'Contenus exclusifs', i: '<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/>', d: 'Photos, vidéos, albums, stories, lives, fichiers. Contenus temporaires ou permanents, à l’unité, en album ou en bundle.', t: ['Photos & vidéos', 'Lives', 'Stories 24 h', 'PPV', 'Bundles'], l: 'Niveaux d’accès · Boutique · Analytics' },
+    { n: 'Abonnements', i: '<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>', d: 'Vos formules, vos prix : Free, Basic, VIP, Private. Mensuel ou annuel, essais gratuits, promotions, places limitées.', t: ['Mensuel / annuel', 'Essai gratuit', 'Promos', 'Éditions limitées'], l: 'CRM · Communication · MRR' },
+    { n: 'Boutique', i: '<path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>', d: 'Produits numériques et physiques, bundles, expériences, billetterie, codes promo et affiliation — sans quitter votre univers.', t: ['Numérique', 'Physique', 'Billetterie', 'Codes promo', 'Affiliation'], l: 'CRM · Analytics · Smart Links' },
+    { n: 'Communauté', i: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5A5 5 0 0 1 21 19"/>', d: 'Commentaires, réactions, messages, groupes et communautés privées : un lieu à vous, où vos fans se retrouvent.', t: ['Commentaires', 'Réactions', 'Groupes', 'Cercles privés'], l: 'Niveaux d’accès · Modération' },
+    { n: 'CRM', i: '<circle cx="12" cy="12" r="9"/><path d="M12 3v9l6.4 6.4"/>', d: 'Chaque fan a une fiche. Segmentez : nouveaux membres, VIP, clients, anciens clients, premium, participants aux événements.', t: ['Segments', 'Historique', 'Consentements', 'Export'], l: 'Communication · Copilote IA' },
+    { n: 'Communication', i: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/>', d: 'Messages, newsletters, notifications push et campagnes ciblées. Parlez directement à votre audience, sans dépendre des algorithmes.', t: ['Messages', 'Newsletters', 'Push', 'Campagnes'], l: 'CRM · Analytics' },
+    { n: 'Smart Links', i: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>', d: 'secr3tly.com/nom, /shop, /vip, /video, /event : un lien par intention, suivi, avec son QR code, qui mène droit au bon endroit.', t: ['/shop', '/vip', '/video', '/event', 'QR codes'], l: 'Analytics · Boutique' },
+    { n: 'Analytics', i: '<path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/>', d: 'Audience et business réunis : visiteurs, sources, conversions, revenus, MRR, panier moyen, churn.', t: ['Revenus', 'MRR', 'Panier moyen', 'Churn', 'Conversions'], l: 'Tous les modules' },
+    { n: 'Media Kit', i: '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>', d: 'Généré automatiquement et toujours à jour : audience, engagement, démographie, tarifs. Prêt à envoyer aux marques.', t: ['Automatique', 'Tarifs', 'Audience', 'PDF & lien'], l: 'Analytics · Collaborations' },
+    { n: 'Collaborations', i: '<circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/>', d: 'Un espace brand deals : briefs, contrats, livrables, échéances, commissions et résultats de chaque partenariat.', t: ['Briefs', 'Contrats', 'Livrables', 'Sponsoring'], l: 'Media Kit · Smart Links' },
+    { n: 'Copilote IA', i: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/>', d: 'Il écrit vos annonces, suggère vos prix, repère les membres à relancer et prépare vos campagnes.', t: ['Rédaction', 'Prix', 'Relances', 'Idées'], l: 'CRM · Communication · Analytics' },
+    { n: 'SEO & domaine', i: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>', d: 'Votre propre domaine, un référencement soigné, des aperçus parfaits sur chaque réseau. SECR3TLY reste en coulisses.', t: ['Domaine perso', 'SSL', 'Métadonnées', 'Partage social'], l: 'Smart Links · Media Kit' }
+  ];
+  var nodesEl = $('#orbit-nodes'), linesEl = $('#orbit-lines'), panel = $('#panel');
+  var active = 0, auto = null, touched = false;
+  var nodesHtml = '', linesHtml = '';
+  FEATURES.forEach(function (f, i) {
+    var inner = i % 2 === 1;
+    var r = inner ? 29 : 45, a = (i * 30 - 90) * Math.PI / 180;
+    var x = 50 + r * Math.cos(a), y = 50 + r * Math.sin(a);
+    nodesHtml += '<button type="button" class="node" data-i="' + i + '" style="left:' + x.toFixed(2) + '%;top:' + y.toFixed(2) + '%" aria-pressed="false" aria-label="' + f.n + '">' +
+      '<span class="ic">' + I(f.i) + '</span><span class="lb" aria-hidden="true">' + f.n + '</span></button>';
+    linesHtml += '<line x1="50" y1="50" x2="' + x.toFixed(2) + '" y2="' + y.toFixed(2) + '"/>';
+  });
+  nodesEl.innerHTML = nodesHtml; linesEl.innerHTML = linesHtml;
+  function setFeature(i, instant) {
+    active = i;
+    nodesEl.querySelectorAll('.node').forEach(function (n, k) { n.classList.toggle('on', k === i); n.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    linesEl.querySelectorAll('line').forEach(function (l, k) { l.classList.toggle('on', k === i); });
+    var f = FEATURES[i];
+    var html = '<span class="panel-n">' + (i < 9 ? '0' : '') + (i + 1) + ' / 12</span><h3>' + f.n + '</h3><p>' + f.d + '</p>' +
+      '<ul>' + f.t.map(function (t) { return '<li class="chip">' + t + '</li>'; }).join('') + '</ul>' +
+      '<p class="panel-link">Connecté à <b>' + f.l + '</b></p>';
+    if (instant || reduce) { panel.innerHTML = html; return; }
+    panel.classList.add('swap');
+    setTimeout(function () { panel.innerHTML = html; panel.classList.remove('swap'); }, 220);
+  }
+  panel.parentNode.style.display = 'flex';
+  panel.style.display = 'flex'; panel.style.flexDirection = 'column'; panel.style.flex = '1';
+  nodesEl.addEventListener('click', function (e) {
+    var n = e.target.closest('.node'); if (!n) return;
+    touched = true; clearInterval(auto); setFeature(Number(n.getAttribute('data-i')));
+  });
+  setFeature(0, true);
+  if (!reduce && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      en.forEach(function (x) {
+        clearInterval(auto);
+        if (x.isIntersecting && !touched) auto = setInterval(function () { setFeature((active + 1) % FEATURES.length); }, 3800);
+      });
+    }, { threshold: 0.35 }).observe($('#orbit'));
+  }
+
+  /* ------------------------------------------------------------ Bento : smart links, analytics, CRM */
+  var SITE = 'https://cronobots.github.io/SECR3TLY/';
+  var SL = [['', 'Univers', 12840], ['shop', 'Boutique', 6120], ['vip', 'Cercle VIP', 8830], ['video', 'Vidéo', 2940], ['event', 'Événement', 1720]];
+  $('#sl-list').innerHTML = SL.map(function (s, i) {
+    return '<li><button type="button" data-sl="' + i + '" aria-pressed="' + (i === 2) + '"><span>/lena' + (s[0] ? '/' + s[0] : '') + '</span><b>' + S.compact(s[2]) + '</b></button></li>';
+  }).join('');
+  function setQr(i) {
+    var s = SL[i];
+    $('#sl-qr').innerHTML = UI.qr(SITE + 'lena' + (s[0] ? '/' + s[0] : ''), { bg: '#f3ece6', fg: '#0b0909' });
+    $('#sl-qr').setAttribute('title', 'secr3tly.com/lena' + (s[0] ? '/' + s[0] : ''));
+    document.querySelectorAll('[data-sl]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-sl') === String(i) ? 'true' : 'false'); });
+  }
+  $('#sl-list').addEventListener('click', function (e) { var b = e.target.closest('[data-sl]'); if (b) setQr(Number(b.getAttribute('data-sl'))); });
+  setQr(2);
+
+  var an = S.analytics('lena', 30);
+  $('#kpis').innerHTML = [
+    ['MRR', S.money(an.mrr)], ['Panier moyen', S.money(an.aov)],
+    ['Conversion', (an.conversion * 100).toFixed(1).replace('.', ',') + ' %'], ['Churn', (an.churn * 100).toFixed(1).replace('.', ',') + ' %']
+  ].map(function (k) { return '<div><small>' + k[0] + '</small><b>' + k[1] + '</b></div>'; }).join('');
+  (function () {
+    var vals = an.series.map(function (s) { return s.revenue; });
+    var max = Math.max.apply(null, vals), min = Math.min.apply(null, vals);
+    var W = 600, H = 110, pad = 8;
+    var pts = vals.map(function (v, i) { return [i / (vals.length - 1) * W, pad + (1 - (v - min) / (max - min || 1)) * (H - pad * 2)]; });
+    var d = pts.map(function (p, i) { return (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+    var last = pts[pts.length - 1];
+    $('#spark').innerHTML = '<defs><linearGradient id="spf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4467e" stop-opacity=".28"/><stop offset="1" stop-color="#d4467e" stop-opacity="0"/></linearGradient>' +
+      '<linearGradient id="spl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9c7fa6"/><stop offset="1" stop-color="#e8b4bc"/></linearGradient></defs>' +
+      '<path d="' + d + ' L' + W + ' ' + H + ' L0 ' + H + 'Z" fill="url(#spf)"/>' +
+      '<path d="' + d + '" fill="none" stroke="url(#spl)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>' +
+      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="4" fill="#f3ece6"/>';
+  })();
+
+  var mem = S.members('lena', 400);
+  function cnt(f) { return mem.filter(f).length * 10; }
+  var SEGS = [
+    ['Nouveaux membres', cnt(function (m) { return m.tags.indexOf('Nouveau') >= 0; }), '#e8b4bc'],
+    ['VIP', cnt(function (m) { return m.level === 'vip'; }), '#d4467e'],
+    ['Clients', cnt(function (m) { return m.tags.indexOf('Client') >= 0; }), '#d9c3a0'],
+    ['Anciens clients', cnt(function (m) { return m.status === 'churned'; }), '#7d7270'],
+    ['Premium', cnt(function (m) { return m.level === 'private'; }), '#9c7fa6'],
+    ['Participants événements', cnt(function (m) { return m.tags.indexOf('Événement') >= 0; }), '#c0707f']
+  ];
+  $('#segs').innerHTML = SEGS.map(function (s) { return '<span class="seg"><i style="background:' + s[2] + '"></i>' + s[0] + ' <b>' + s[1].toLocaleString('fr-FR') + '</b></span>'; }).join('');
+
+  /* ------------------------------------------------------------ Galerie des thèmes */
+  var PRE = T.PRESETS, ORDER = ['minimal', 'luxury', 'fashion', 'beauty', 'editorial', 'creator', 'social', 'dark', 'premium', 'gaming', 'artistic', 'lifestyle', 'elegant', 'exclusive'];
+  var BTN = { pill: 'pilule', soft: 'arrondis', square: 'carrés' }, CARD = { glass: 'verre', solid: 'pleines', outline: 'contour', flat: 'à plat' }, BG = { aura: 'aura', plain: 'uni', mesh: 'dégradé', grain: 'grain', lines: 'lignes' };
+  $('#th-list').innerHTML = ORDER.map(function (k) {
+    var p = PRE[k];
+    return '<button type="button" class="th" data-th="' + k + '" aria-pressed="false">' +
+      '<span class="th-sw" style="background:' + p.bg + ';color:' + p.ink + ';font-family:\'' + p.display + '\',serif" aria-hidden="true">Aa<i style="background:' + p.accent + '"></i></span>' +
+      '<span><b>' + p.name + '</b><small>' + (p.mode === 'dark' ? 'Sombre' : 'Clair') + ' · ' + p.display + '</small></span></button>';
+  }).join('');
+  function setTheme(k) {
+    var p = PRE[k];
+    document.querySelectorAll('.th').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-th') === k ? 'true' : 'false'); });
+    $('#th-preview').innerHTML = mini(lena, { preset: k });
+    $('#th-spec').innerHTML =
+      '<dt>Thème</dt><dd>' + p.name + '</dd>' +
+      '<dt>Couleurs</dt><dd><span style="display:inline-flex;gap:4px;vertical-align:middle">' + [p.bg, p.surface, p.accent, p.accent2].map(function (c) { return '<i style="width:12px;height:12px;border-radius:50%;background:' + c + ';border:1px solid rgba(255,255,255,.15)"></i>'; }).join('') + '</span></dd>' +
+      '<dt>Titres</dt><dd>' + p.display + '</dd><dt>Texte</dt><dd>' + p.body + '</dd>' +
+      '<dt>Boutons</dt><dd>' + BTN[p.button] + '</dd><dt>Cartes</dt><dd>' + CARD[p.card] + '</dd><dt>Fond</dt><dd>' + BG[p.background] + '</dd>';
+  }
+  $('#th-list').addEventListener('click', function (e) { var b = e.target.closest('.th'); if (b) setTheme(b.getAttribute('data-th')); });
+  setTheme('luxury');
+
+  /* ------------------------------------------------------------ Domaine personnalisé */
+  var domList = creators.filter(function (c) { return c.domain && !c.externalUrl && c.posts; });
+  var domI = 0, urlEl = $('#br-url'), page = $('#br-page');
+  function renderPage(c) {
+    var th = themeStyle(c.theme);
+    page.setAttribute('style', th.style);
+    var items = (c.posts || []).concat(c.products || []).slice(0, 3);
+    while (items.length < 3) items.push({ art: c.cover });
+    page.innerHTML = '<div class="bp-cover">' + UI.art(c.cover) + '</div>' +
+      '<div class="bp-head">' + UI.avatar(c, 64) + '<div><strong>' + esc(c.name) + '</strong><small>' + esc(c.tagline) + '</small></div><span class="bp-join">Rejoindre</span></div>' +
+      '<div class="bp-tabs"><span>Contenus</span><span>Abonnements</span><span>Boutique</span><span>Événements</span><span>Communauté</span></div>' +
+      '<div class="bp-grid">' + items.map(function (it) {
+        var lk = it.access && it.access !== 'public';
+        return '<div class="' + (lk ? 'lock' : '') + '">' + UI.art(it.art) + (lk ? '<span class="lvl lvl-' + it.access + '">' + LVNAME[it.access] + '</span>' : '') + '</div>';
+      }).join('') + '</div>' +
+      '<div class="bp-foot">Powered by SECR3TLY</div>';
+  }
+  renderPage(domList[0]); urlEl.textContent = domList[0].domain;
+  function typeTo(text, done) {
+    var cur = urlEl.textContent;
+    var del = setInterval(function () {
+      cur = cur.slice(0, -1); urlEl.textContent = cur;
+      if (!cur) {
+        clearInterval(del); var k = 0;
+        var add = setInterval(function () { k++; urlEl.textContent = text.slice(0, k); if (k >= text.length) { clearInterval(add); done(); } }, 55);
+      }
+    }, 28);
+  }
+  if (!reduce && domList.length > 1) {
+    var domTimer = null;
+    var cycle = function () {
+      domI = (domI + 1) % domList.length;
+      var c = domList[domI];
+      typeTo(c.domain, function () { page.classList.add('fade'); setTimeout(function () { renderPage(c); page.classList.remove('fade'); }, 380); });
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) {
+        en.forEach(function (x) { clearInterval(domTimer); if (x.isIntersecting) domTimer = setInterval(cycle, 4200); });
+      }, { threshold: 0.3 }).observe(page);
+    }
+  }
+
+  /* ------------------------------------------------------------ Applications */
+  (function () {
+    var bars = [30, 42, 38, 55, 48, 62, 58, 71, 66, 84, 78, 92].map(function (h) { return '<i style="height:' + h + '%"></i>'; }).join('');
+    var ines = byHandle.ines || lena, noah = byHandle.noah || lena, kai = byHandle.kai || lena, mael = byHandle.mael || lena;
+    $('#app-phones').innerHTML =
+      '<div class="aph"><div class="aph-s"><span class="aph-t">Studio</span><span class="aph-h">Bonsoir, Lena</span>' +
+        '<div class="aph-card"><small>Revenus aujourd’hui</small><b>1 284 €</b><div class="aph-bars">' + bars + '</div></div>' +
+        '<div class="aph-n">' + UI.avatar(ines, 20) + 'Camille a rejoint VIP</div>' +
+        '<div class="aph-n">' + UI.avatar(noah, 20) + 'Commande · foulard soie</div>' +
+        '<div class="aph-n">' + UI.avatar(kai, 20) + '12 nouveaux messages</div></div></div>' +
+      '<div class="aph"><div class="aph-s"><span class="aph-t">Mes univers</span>' +
+        '<div class="aph-stories">' + [lena, ines, kai, mael].map(function (c) { return '<span>' + UI.avatar(c, 30) + '</span>'; }).join('') + '</div>' +
+        '<span class="aph-h">Lena Moreau</span>' +
+        '<div class="aph-post">' + UI.art((lena.posts[2] || lena.posts[0]).art) + '<div>' + LOCK + 'Live privé<button type="button" tabindex="-1">Débloquer · VIP</button></div></div></div></div>';
+  })();
+
+  /* ------------------------------------------------------------ Tarifs */
+  var PLANS = [
+    { n: 'FREE', p: '0 €', s: '/mois', f: 'Pour lancer votre univers et vos premiers revenus.', c: '10 %', cta: 'Commencer gratuitement', items: ['Univers personnel complet', '14 thèmes personnalisables', 'Liens illimités & smart links', 'Abonnements & contenus exclusifs', 'Boutique numérique', 'Statistiques essentielles'] },
+    { n: 'PRO', p: '19 €', s: '/mois', f: 'Pour les créateurs qui vivent de leur communauté.', c: '5 %', cta: 'Passer Pro', feat: true, items: ['Tout FREE, plus :', 'Votre propre nom de domaine', 'Personnalisation de chaque élément', 'CRM, segments & newsletters', 'Analytics business : MRR, churn, conversions', 'Media kit automatique'] },
+    { n: 'PREMIUM', p: '49 €', s: '/mois', f: 'Pour les univers qui deviennent une marque.', c: '2 %', cta: 'Choisir Premium', items: ['Tout PRO, plus :', 'Copilote IA illimité', 'Espace collaborations & brand deals', 'Événements & billetterie', 'Communautés privées & push ciblés', 'Mention « Powered by » masquable'] },
+    { n: 'BUSINESS', p: 'Sur devis', s: '', f: 'Pour les agences, équipes et managers.', c: 'Négociée', cta: 'Nous contacter', items: ['Multi-créateurs & multi-marques', 'Équipes, rôles & permissions', 'Tableau de bord agence', 'Exports & intégrations', 'Accompagnement dédié', 'Conditions sur mesure'] }
+  ];
+  $('#prices').innerHTML = PLANS.map(function (p) {
+    return '<article class="price reveal' + (p.feat ? ' feat' : '') + '">' + (p.feat ? '<span class="badge">Le plus choisi</span>' : '') +
+      '<h3>' + p.n + '</h3><div class="amt">' + p.p.replace(' €', '&nbsp;€') + (p.s ? '<small> ' + p.s + '</small>' : '') + '</div><p class="for">' + p.f + '</p>' +
+      '<div class="com"><span>Commission</span><b>' + p.c.replace(' %', '&nbsp;%') + '</b></div>' +
+      '<ul>' + p.items.map(function (i) { return '<li>' + CHECK + '<span>' + i + '</span></li>'; }).join('') + '</ul>' +
+      '<a class="btn ' + (p.feat ? 'btn-sig' : p.n === 'BUSINESS' ? 'btn-ghost' : 'btn-primary') + '" href="' + (p.n === 'BUSINESS' ? 'mailto:business@secr3tly.com?subject=SECR3TLY%20Business' : 'studio/') + '">' + p.cta + '</a></article>';
+  }).join('');
+
+  /* ------------------------------------------------------------ Signatures finales */
+  var SIGS = ['Your space. Your audience. Your secrets.', 'Your world. Your people. Your business.', 'Where creators get closer.', 'Everything you are. One place.', 'One creator. One universe. One link.'];
+  var rot = $('#rot');
+  rot.innerHTML = SIGS.map(function (s, i) { return '<span class="nacre' + (i === 0 ? ' on' : '') + '">' + s + '</span>'; }).join('');
+  rot.insertAdjacentHTML('afterend', '<p class="sr-only">' + SIGS.join(' ') + '</p>');
+  if (!reduce) {
+    var ri = 0, spans = rot.querySelectorAll('span');
+    setInterval(function () { spans[ri].classList.remove('on'); ri = (ri + 1) % spans.length; spans[ri].classList.add('on'); }, 3400);
+  }
+
+  /* ------------------------------------------------------------ Parallaxe + apparitions */
+  if (reduce) document.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); });
+  else UI.reveal();
+  if (!reduce) {
+    var plx = [].slice.call(document.querySelectorAll('[data-plx]'));
+    var ticking = false;
+    var apply = function () {
+      ticking = false;
+      var vh = window.innerHeight;
+      plx.forEach(function (el) {
+        var sp = Number(el.getAttribute('data-plx'));
+        var r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        var off = (r.top + r.height / 2 - vh / 2) * -sp;
+        if (el.classList.contains('hero-logo')) {
+          var y = window.scrollY;
+          el.style.transform = 'translateX(-50%) translateY(' + (y * sp).toFixed(1) + 'px) scale(' + (1 + y * 0.00012).toFixed(4) + ')';
+          el.style.opacity = Math.max(0, 1 - y / (vh * 0.9)).toFixed(3);
+        } else el.style.transform = 'translateY(' + off.toFixed(1) + 'px)';
+      });
+    };
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }, { passive: true });
+    apply();
+  }
+})();
+</script>
+</body>
+</html>
