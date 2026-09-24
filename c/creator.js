@@ -41,7 +41,13 @@
   function $$(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
   function arr(x) { return Array.isArray(x) ? x : []; }
   function money(n) { return S.money(Number(n) || 0); }
-  function firstName(c) { return String(c.name || '').split(' ')[0] || c.name; }
+  function firstName(c) {
+    if (c.firstName) return c.firstName;
+    var w = String(c.name || '').trim().split(/\s+/);
+    return w.length === 2 && !/^(atelier|studio|maison|la|le|les|the|chez|mr|mme)$/i.test(w[0]) ? w[0] : (c.name || '');
+  }
+  /** « de Lena » / « d’Atelier Kaï » */
+  function deName(n) { return (/^[aeiouyhàâäéèêëîïôöûü]/i.test(n) ? 'd’' : 'de ') + n; }
   function reduced() { return window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches; }
   function animLevel() { return reduced() ? 'none' : (state.theme && state.theme.animation) || 'subtle'; }
 
@@ -167,7 +173,7 @@
     app.innerHTML =
       previewPill() +
       topbar(c) +
-      '<header class="cover" role="img" aria-label="Couverture de ' + esc(c.name) + '">' + coverHtml(c) + '</header>' +
+      '<header class="cover" role="img" aria-label="Couverture ' + esc(deName(c.name)) + '">' + coverHtml(c) + '</header>' +
       '<div class="shell">' +
         '<aside class="identity-col">' + identity(c, sections) + '</aside>' +
         '<main id="main" class="main-col" tabindex="-1">' +
@@ -294,7 +300,7 @@
   function sectionHtml(id, c) {
     var t = TITLES[id] || [id, id];
     var title = t[1].replace('{name}', firstName(c));
-    if (id === 'newsletter') title = 'La lettre de ' + firstName(c);
+    if (id === 'newsletter') title = 'La lettre ' + deName(firstName(c));
     var body = '';
     try { body = RENDER[id](c); } catch (e) { body = ''; if (window.console) console.warn('Section', id, e); }
     if (!body) body = '<div class="empty">Section vide — ajoutez du contenu depuis le Studio.</div>';
@@ -305,14 +311,14 @@
   }
 
   function emptyUniverse(c) {
-    return '<section class="sec"><div class="empty big"><p class="eyebrow">Bientôt</p><h2 class="sec-title">L’univers de ' + esc(firstName(c)) + ' se prépare</h2><p>Suivez-le pour être prévenu·e de l’ouverture.</p></div></section>';
+    return '<section class="sec"><div class="empty big"><p class="eyebrow">Bientôt</p><h2 class="sec-title">L’univers ' + esc(deName(firstName(c))) + ' se prépare</h2><p>Suivez-le pour être prévenu·e de l’ouverture.</p></div></section>';
   }
 
   function externalBlock(c) {
     if (!c.externalUrl) return '';
     return '<section class="sec reveal"><div class="card external-card">' +
       '<p class="eyebrow">Univers en ligne</p>' +
-      '<h2 class="sec-title">L’univers de ' + esc(c.name) + ' vit sur son propre domaine</h2>' +
+      '<h2 class="sec-title">L’univers ' + esc(deName(c.name)) + ' vit sur son propre domaine</h2>' +
       '<p class="muted">Liens, contenus exclusifs et accès privé : tout est réuni sur ' + esc(c.domain || c.externalUrl) + '.</p>' +
       '<a class="btn btn-primary" href="' + esc(safeUrl(c.externalUrl)) + '" data-act="external">Entrer dans l’univers ' + IC.arrow + '</a>' +
     '</div></section>';
@@ -915,7 +921,7 @@
       case 'join-back': setModal(joinStep1(el.getAttribute('data-sel'))); break;
       case 'change-tier': setModal(joinStep1((currentMembership() || {}).tier)); break;
       case 'cancel-sub':
-        setModal('<h2 id="modal-title" class="m-title">Résilier votre abonnement ?</h2><p class="muted">Vous perdrez l’accès aux contenus réservés de ' + esc(c.name) + '. Vous pourrez revenir à tout moment.</p>' +
+        setModal('<h2 id="modal-title" class="m-title">Résilier votre abonnement ?</h2><p class="muted">Vous perdrez l’accès aux contenus réservés ' + esc(deName(c.name)) + '. Vous pourrez revenir à tout moment.</p>' +
           '<div class="stack-btns"><button class="btn btn-primary btn-block" data-act="close" autofocus>Garder mon accès</button><button class="btn btn-ghost btn-block danger" data-act="cancel-confirm">Confirmer la résiliation</button></div>');
         break;
       case 'cancel-confirm':
@@ -970,7 +976,7 @@
       processing();
       delay(function () {
         completeJoin(tier);
-        success('Bienvenue dans ' + tier.name, 'Vos contenus ' + (LEVEL_NAME[tier.level] || '') + ' sont débloqués. Bonne découverte !', 'Découvrir mes contenus');
+        success('Bienvenue dans le cercle', 'Votre accès ' + tier.name + ' est actif : les contenus ' + (LEVEL_NAME[tier.level] || '') + ' sont débloqués.', 'Découvrir mes contenus');
       });
     } else if (kind === 'invite') {
       var it = tierById(f.getAttribute('data-tier'));
@@ -1141,7 +1147,7 @@
       '<div class="inter-card">' +
         '<div class="inter-av">' + UI.avatar(c, 104) + '</div>' +
         '<p class="eyebrow">Un univers SECR<span class="sig3">3</span>TLY</p>' +
-        '<h1 class="solo-title">Entrer dans l’univers de ' + esc(c.name) + '</h1>' +
+        '<h1 class="solo-title">Entrer dans l’univers ' + esc(deName(c.name)) + '</h1>' +
         '<p class="solo-text">' + esc(c.tagline || '') + (c.tagline ? ' · ' : '') + esc(host) + '</p>' +
         '<div class="inter-progress" aria-hidden="true"><i></i></div>' +
         '<p class="small muted" id="inter-status" role="status">Ouverture automatique…</p>' +

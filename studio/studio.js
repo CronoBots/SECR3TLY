@@ -26,8 +26,8 @@
     document.getElementById('nav').innerHTML = GROUPS.map(function (g) {
       return '<div class="nav-g"><div class="nav-gt">' + esc(g.name) + '</div>' + g.ids.map(function (id) {
         var v = S.views[id]; if (!v) return '';
-        var on = id === r;
-        return '<a class="nav-i' + (on ? ' on' : '') + '" href="#/' + id + '"' + (on ? ' aria-current="page"' : '') + '>' + S.ic(v.icon, 18) + '<span>' + esc(v.title) + '</span>' + (v.badge ? '<span class="nav-badge">' + esc(v.badge()) + '</span>' : '') + '</a>';
+        var on = id === r, bd = v.badge ? v.badge() : '';
+        return '<a class="nav-i' + (on ? ' on' : '') + '" href="#/' + id + '"' + (on ? ' aria-current="page"' : '') + '>' + S.ic(v.icon, 18) + '<span>' + esc(v.title) + '</span>' + (bd ? '<span class="nav-badge">' + esc(bd) + '</span>' : '') + '</a>';
       }).join('') + '</div>';
     }).join('');
     var inTabs = TABS.some(function (t) { return t.id === r; });
