@@ -18,7 +18,7 @@
     main.innerHTML =
       '<div class="sec-h"><div><h2 class="sec-t">Collaborations</h2><p class="sec-d">Suivez vos partenariats du premier contact au bilan : brief, contrat, livrables, commissions.</p></div>' +
         '<button type="button" class="btn btn-primary" id="cbNew">' + S.ic('plus', 16) + 'Nouvelle collaboration</button></div>' +
-      '<div class="kpis kb-kpis"><div class="kpi"><div class="kpi-l">Pipeline (prospects + briefs)</div><div class="kpi-v">' + S.money(pipeline) + '</div><div class="kpi-f"><span class="kpi-s">valeur potentielle</span></div></div>' +
+      '<div class="kpis kb-kpis"><div class="kpi"><div class="kpi-l">Pipeline</div><div class="kpi-v">' + S.money(pipeline) + '</div><div class="kpi-f"><span class="kpi-s">valeur potentielle</span></div></div>' +
         '<div class="kpi"><div class="kpi-l">Signé</div><div class="kpi-v">' + S.money(signed) + '</div><div class="kpi-f"><span class="kpi-s">contrats, en cours, terminés</span></div></div>' +
         '<div class="kpi"><div class="kpi-l">Commissions affiliation</div><div class="kpi-v">' + S.money(aff) + '</div><div class="kpi-f"><span class="kpi-s">' + S.num(clicks) + ' clics générés</span></div></div></div>' +
       (list.length ? '<div class="kanban mt" id="kb">' + COLS.map(function (col) {

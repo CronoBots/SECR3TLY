@@ -40,6 +40,16 @@
   function $(sel, el) { return (el || document).querySelector(sel); }
   function $$(sel, el) { return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
   function arr(x) { return Array.isArray(x) ? x : []; }
+  // Publications visibles : ni brouillons, ni programmées dans le futur (réglées dans le Studio)
+  function posts(c) {
+    var now = Date.now();
+    return arr(c && c.posts).filter(function (p) {
+      if (p.draft || p.status === 'draft') return false;
+      if (p.scheduledAt && new Date(p.scheduledAt).getTime() > now) return false;
+      return true;
+    });
+  }
+  function settings(c) { return (c && c.settings) || {}; }
   function money(n) { return S.money(Number(n) || 0); }
   function firstName(c) {
     if (c.firstName) return c.firstName;
@@ -210,8 +220,8 @@
   function hasContent(id, c) {
     switch (id) {
       case 'links': return arr(c.links).length > 0;
-      case 'feed': return arr(c.posts).length > 0;
-      case 'gallery': return arr(c.posts).length + arr(c.products).length > 0;
+      case 'feed': return posts(c).length > 0;
+      case 'gallery': return posts(c).length + arr(c.products).length > 0;
       case 'memberships': return arr(c.tiers).length > 0;
       case 'shop': return arr(c.products).length > 0;
       case 'events': return arr(c.events).length > 0;
@@ -263,7 +273,7 @@
       '<dl class="id-stats">' +
         '<div><dt>Abonnés</dt><dd>' + S.compact((st.followers || 0) + (following ? 1 : 0)) + '</dd></div>' +
         '<div><dt>Membres</dt><dd>' + S.compact(st.members || 0) + '</dd></div>' +
-        '<div><dt>Publications</dt><dd>' + S.compact(st.posts || arr(c.posts).length) + '</dd></div>' +
+        '<div><dt>Publications</dt><dd>' + S.compact(st.posts || posts(c).length) + '</dd></div>' +
       '</dl>' +
       (m ? '<p class="id-member">' + IC.spark + 'Vous êtes membre ' + esc(mt ? mt.name : LEVEL_NAME[m.level]) + '</p>' : '') +
       '<div class="id-actions">' +
@@ -359,12 +369,12 @@
     }
   }
   RENDER.feed = function (c) {
-    var posts = arr(c.posts);
-    if (!posts.length) return '';
+    var feedPosts = posts(c);
+    if (!feedPosts.length) return '';
     var chips = [['all', 'Tout'], ['photo', 'Photos'], ['video', 'Vidéos'], ['album', 'Albums'], ['exclusive', 'Exclusifs']];
-    var list = posts.filter(function (p) { return matchesFilter(p, state.filter); });
+    var list = feedPosts.filter(function (p) { return matchesFilter(p, state.filter); });
     return '<div class="chips" role="toolbar" aria-label="Filtrer les publications">' + chips.map(function (ch) {
-      var n = posts.filter(function (p) { return matchesFilter(p, ch[0]); }).length;
+      var n = feedPosts.filter(function (p) { return matchesFilter(p, ch[0]); }).length;
       return '<button class="chip" data-act="filter" data-f="' + ch[0] + '" aria-pressed="' + (state.filter === ch[0]) + '"' + (n ? '' : ' disabled') + '>' + ch[1] + (ch[0] !== 'all' && n ? ' <span class="n">' + n + '</span>' : '') + '</button>';
     }).join('') + '</div>' +
     (list.length ? '<div class="feed">' + list.map(postCard).join('') + '</div>' : '<div class="empty">Rien ici pour le moment.</div>');
@@ -411,7 +421,7 @@
 
   function galleryItems(c) {
     var items = [];
-    arr(c.posts).forEach(function (p) { items.push({ id: p.id, kind: 'post', title: p.title, art: p.art, locked: postLocked(p), post: p }); });
+    posts(c).forEach(function (p) { items.push({ id: p.id, kind: 'post', title: p.title, art: p.art, locked: postLocked(p), post: p }); });
     arr(c.products).forEach(function (p) { items.push({ id: p.id, kind: 'product', title: p.name, art: p.art, locked: false, product: p }); });
     return items;
   }
@@ -598,7 +608,7 @@
       }).join('') + '</ul>' : '') +
       '<p class="foot-name">© ' + new Date().getFullYear() + ' ' + esc(c.name) + (c.domain ? ' · ' + esc(c.domain) : '') + '</p>' +
       '<p class="foot-legal"><button data-act="legal" data-k="mentions">Mentions légales</button><button data-act="legal" data-k="privacy">Confidentialité</button><button data-act="legal" data-k="cgv">CGV</button></p>' +
-      '<a class="powered" href="../"' + (state.preview ? ' target="_blank" rel="noopener"' : '') + '>Powered by <b>SECR<span>3</span>TLY</b></a>' +
+      (settings(c).poweredBy === false ? '' : '<a class="powered" href="../"' + (state.preview ? ' target="_blank" rel="noopener"' : '') + '>Powered by <b>SECR<span>3</span>TLY</b></a>') +
     '</footer>';
   }
 
@@ -913,13 +923,13 @@
         break;
       case 'like':
         var liked = S.toggleLike(c.handle, id);
-        var p = arr(c.posts).filter(function (x) { return x.id === id; })[0];
+        var p = posts(c).filter(function (x) { return x.id === id; })[0];
         el.classList.toggle('on', liked); el.setAttribute('aria-pressed', String(liked));
         el.querySelector('span').textContent = S.compact(((p && p.likes) || 0) + (liked ? 1 : 0));
         if (liked && animLevel() !== 'none') { el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
         break;
       case 'noop-locked': UI.toast('Débloquez ce contenu pour voir les commentaires'); break;
-      case 'open-post': var pp = arr(c.posts).filter(function (x) { return x.id === id; })[0]; if (pp) openPost(pp); break;
+      case 'open-post': var pp = posts(c).filter(function (x) { return x.id === id; })[0]; if (pp) openPost(pp); break;
       case 'join': openJoin(el.getAttribute('data-tier')); break;
       case 'manage': openManage(); break;
       case 'period': state.period = el.getAttribute('data-p'); var ms = $('#sec-memberships'); if (ms) { ms.outerHTML = sectionHtml('memberships', c); $('#sec-memberships').classList.add('in'); $('[data-act="period"][data-p="' + state.period + '"]').focus({ preventScroll: true }); } break;
@@ -935,7 +945,7 @@
         if (!state.preview && state.as === 'public') state.as = null;
         closeModal(true); UI.toast('Abonnement résilié'); render({ keepScroll: true }); break;
       case 'buy-post':
-        var bp = arr(c.posts).filter(function (x) { return x.id === id; })[0];
+        var bp = posts(c).filter(function (x) { return x.id === id; })[0];
         if (bp) openPurchase({ id: bp.id, title: bp.title, art: bp.art, amount: bp.price, kind: bp.type === 'bundle' ? 'Bundle' : 'Contenu à l’unité', note: 'Accès permanent, sans abonnement', done: 'Contenu débloqué' });
         break;
       case 'unlock-item':
@@ -1100,7 +1110,7 @@
     var can = document.head.querySelector('link[rel="canonical"]');
     if (!can) { can = document.createElement('link'); can.rel = 'canonical'; document.head.appendChild(can); }
     can.href = url;
-    if (state.preview) meta('name', 'robots', 'noindex');
+    meta('name', 'robots', state.preview || (c.seo && c.seo.noindex) ? 'noindex' : 'index, follow');
     var ld = document.getElementById('ld-profile');
     if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'ld-profile'; document.head.appendChild(ld); }
     ld.textContent = JSON.stringify({
@@ -1199,7 +1209,7 @@
   /* Rafraîchit les compteurs de stories éphémères */
   setInterval(function () {
     $$('[data-story]').forEach(function (el) {
-      var p = arr(state.creator && state.creator.posts).filter(function (x) { return x.id === el.getAttribute('data-story'); })[0];
+      var p = posts(state.creator).filter(function (x) { return x.id === el.getAttribute('data-story'); })[0];
       if (p) el.innerHTML = IC.clock + '24 h · ' + esc(storyLeft(p));
     });
   }, 60000);

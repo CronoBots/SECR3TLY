@@ -80,17 +80,15 @@
       '<div class="kpis k6 mt">' + kpis.map(function (k) {
         return '<div class="kpi"><div class="kpi-l">' + esc(k.l) + '</div><div class="kpi-v">' + k.v + '</div><div class="kpi-f">' + (k.d || '') + (k.sp || '<span class="kpi-s">' + esc(k.s) + '</span>') + '</div></div>';
       }).join('') + '</div>' +
-      '<div class="split mt">' +
-        '<section class="panel"><div class="panel-h"><div><h3 class="panel-t" id="ovChartT">Revenus</h3><p class="panel-d" id="ovChartD">Par jour, 30 derniers jours · total ' + esc(S.money(t.revenue)) + '</p></div>' + S.seg('ovc', [{ v: 'rev', l: 'Revenus' }, { v: 'aud', l: 'Audience' }], 'rev') + '</div><div class="chart" id="ovChart"></div></section>' +
-        '<div class="grid">' +
-          (sug ? '<section class="panel ai-card"><div class="ai-badge">' + S.ic('copilot', 15) + 'Suggestion de l’IA</div><h3 class="ai-t">' + esc(sug.t) + '</h3><p class="ai-d">' + esc(sug.d) + '</p><div class="row-wrap"><a class="btn btn-sig btn-sm" href="' + sug.href + '">' + esc(sug.cta) + '</a><a class="btn btn-ghost btn-sm" href="#/copilot">Demander au copilote</a></div></section>' : '') +
-          '<section class="panel"><div class="panel-h"><h3 class="panel-t">Actions rapides</h3></div><div class="qa">' +
-            qa('content', 'Publier un contenu', '#/content/new') + qa('universe', 'Personnaliser l’univers', '#/universe') +
-            qa('link', 'Créer un smart link', '#/marketing/links') + qa('mail', 'Envoyer une campagne', '#/marketing/campaigns/new') +
-            qa('commerce', 'Ajouter un produit', '#/commerce/products/new') + qa('mediakit', 'Mon media kit', '#/mediakit') +
-          '</div></section>' +
-        '</div>' +
+      '<div class="split mt ov-top">' +
+        '<section class="panel"><div class="panel-h"><div><h3 class="panel-t" id="ovChartT">Revenus</h3><p class="panel-d" id="ovChartD"></p></div>' + S.seg('ovc', [{ v: 'rev', l: 'Revenus' }, { v: 'aud', l: 'Audience' }], 'rev') + '</div><div class="chart" id="ovChart"></div></section>' +
+        (sug ? '<section class="panel ai-card"><div class="ai-badge">' + S.ic('copilot', 15) + 'Suggestion de l’IA</div><h3 class="ai-t">' + esc(sug.t) + '</h3><p class="ai-d">' + esc(sug.d) + '</p><div class="row-wrap"><a class="btn btn-sig btn-sm" href="' + sug.href + '">' + esc(sug.cta) + '</a><a class="btn btn-ghost btn-sm" href="#/copilot">Demander au copilote</a></div></section>' : '') +
       '</div>' +
+      '<section class="mt"><h3 class="sr">Actions rapides</h3><div class="qa">' +
+        qa('content', 'Publier un contenu', '#/content/new') + qa('universe', 'Personnaliser l’univers', '#/universe') +
+        qa('link', 'Créer un smart link', '#/marketing/links') + qa('mail', 'Envoyer une campagne', '#/marketing/campaigns/new') +
+        qa('commerce', 'Ajouter un produit', '#/commerce/products/new') + qa('mediakit', 'Mon media kit', '#/mediakit') +
+      '</div></section>' +
       '<div class="split mt">' +
         '<section class="panel"><div class="panel-h"><div><h3 class="panel-t">Activité récente</h3><p class="panel-d">Abonnements, achats, messages et commentaires</p></div><a class="link-btn" href="#/community">Communauté →</a></div><ul class="feed" id="ovFeed"></ul></section>' +
         '<div class="grid">' +
@@ -106,14 +104,14 @@
       if (mode === 'aud') {
         main.querySelector('#ovChartT').textContent = 'Audience';
         main.querySelector('#ovChartD').textContent = 'Visiteurs et visiteurs uniques par jour · ' + S.num(t.visitors) + ' visites';
-        S.lineChart(chartEl, { label: 'Audience', labels: p.series.map(function (s) { return s.date; }), series: [
+        S.lineChart(chartEl, { height: 250, label: 'Audience', labels: p.series.map(function (s) { return s.date; }), series: [
           { name: 'Visiteurs', color: S.CH.rose, values: vis },
           { name: 'Uniques', color: S.CH.mauve, values: p.series.map(function (s) { return s.unique; }), area: false }
         ] });
       } else {
         main.querySelector('#ovChartT').textContent = 'Revenus';
         main.querySelector('#ovChartD').textContent = 'Par jour, 30 derniers jours · total ' + S.money(t.revenue);
-        S.lineChart(chartEl, { label: 'Revenus', labels: p.series.map(function (s) { return s.date; }), fmt: function (v) { return S.money(v); }, yfmt: function (v) { return S.num(v) + ' €'; }, series: [{ name: 'Revenus', color: S.CH.rose, values: rev }] });
+        S.lineChart(chartEl, { height: 250, label: 'Revenus', labels: p.series.map(function (s) { return s.date; }), fmt: function (v) { return S.money(v); }, yfmt: function (v) { return S.num(v) + ' €'; }, series: [{ name: 'Revenus', color: S.CH.rose, values: rev }] });
       }
     }
     draw('rev');

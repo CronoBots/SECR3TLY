@@ -86,8 +86,9 @@
       dev.classList.toggle('is-phone', phone); dev.classList.toggle('is-desktop', !phone);
       var W = stage.clientWidth - 8;
       var top = stage.getBoundingClientRect().top;
+      if (!W || W < 0) return;
       var mobile = root.innerWidth < 1100;
-      var H = Math.max(360, root.innerHeight - Math.max(top, mobile ? 150 : 120) - (mobile ? 130 : 70));
+      var H = mobile ? Math.max(420, root.innerHeight - 200) : Math.max(360, root.innerHeight - Math.max(top, 120) - 70);
       var pad = phone ? 22 : 12;
       var s = Math.min(1, W / (fw + pad), H / (fh + pad));
       frame.style.width = fw + 'px'; frame.style.height = fh + 'px';

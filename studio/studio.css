@@ -996,3 +996,46 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;bac
 .claim-url span{color:var(--ivoire-mute);font-weight:600}
 .claim-url b{color:var(--poudre)}
 .claim-t{font-family:var(--font-display);font-size:1.6rem;font-style:italic;margin-bottom:6px}
+
+/* ---------- Ajustements v2 ---------- */
+.ic{display:inline-block;vertical-align:middle}
+.sec-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cp-head .sec-t{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal}
+.sec-h{align-items:center}
+.demo-txt{white-space:nowrap}
+.db-short{display:none}
+@media(max-width:640px){
+  .demo-banner{flex-wrap:nowrap;justify-content:space-between;text-align:left;padding:7px 12px 7px 16px;font-size:.72rem}
+  .db-long{display:none}.db-short{display:inline}
+  .demo-txt{overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .demo-reset{flex:none}
+}
+.kpis>.kpi:last-child:nth-child(odd){grid-column:1/-1}
+@media(min-width:760px){.kpis>.kpi:last-child:nth-child(odd){grid-column:auto}}
+@media(min-width:760px){.kpis.k4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.kpis.k4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.seg-cards.mt,.kanban.mt{margin-top:14px}
+@media(min-width:760px){.seg-cards.mt,.kanban.mt{margin-top:18px}}
+@media(max-width:759px){.cell-r{justify-content:flex-end}}
+@media(min-width:760px){.pc-grid .pc-media{aspect-ratio:1}}
+.utm .fchips{flex-wrap:wrap}
+.mk-eyebrow{margin-top:62px}
+.ov-top{align-items:stretch}
+@media(min-width:1100px){.ov-top{grid-template-columns:minmax(0,1.9fr) minmax(0,1fr)}}
+.ai-card{display:flex;flex-direction:column;justify-content:center}
+.qa{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:760px){.qa{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1180px){.qa{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.qa-i{padding:12px 14px}
+.nav-i{padding:8px 12px}
+.nav-g+.nav-g{margin-top:10px}
+.nav{margin-top:14px}
+.side-brand{padding-bottom:14px}
+@media(max-width:520px){.ub-tab{padding:8px 4px;font-size:.78rem}}
+.tier-f .row{gap:0}
+body.studio{font-variant-numeric:lining-nums}
+.pc-type,.pc-eph,.pc-price{z-index:2}
+.sel-all-m{display:none;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:.82rem;font-weight:600;color:var(--ivoire-dim);cursor:pointer}
+@media(max-width:759px){.sel-all-m{display:flex}}
+@media(max-width:1099px){.mk-ctl{order:2}}
+@media(min-width:1024px) and (max-height:960px){.side-view{display:none}}

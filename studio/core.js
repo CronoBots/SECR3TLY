@@ -235,6 +235,8 @@
     main.innerHTML = '';
     S.emit('route', r);
     try { def.render(main, r.sub, r.parts); } catch (e) { console.error(e); main.innerHTML = S.empty({ icon: 'bolt', title: 'Une erreur est survenue', text: String(e && e.message || e) }); }
+    var on = main.querySelector('.subtab.on');
+    if (on) { var par = on.parentNode; par.scrollLeft = on.offsetLeft - par.clientWidth / 2 + on.clientWidth / 2; }
     root.scrollTo(0, 0);
   };
 

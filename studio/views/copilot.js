@@ -286,7 +286,7 @@
         '<p class="cp-note">' + S.ic('bolt', 14) + '<span><b>Mode démo :</b> en production, le copilote est propulsé par l’API Claude (voir docs/ARCHITECTURE.md). Ici, les réponses sont générées localement à partir de vos données.</span></p>' +
         '<div class="cp-chips" id="cpChips">' + ACTIONS.map(function (a) { return '<button type="button" class="cp-chip" data-run="' + a.id + '">' + S.ic(a.i, 16) + '<span>' + esc(a.l) + '</span></button>'; }).join('') + '</div>' +
         '<div class="cp-thread" id="cpThread" aria-live="polite"></div>' +
-        '<form class="cp-input" id="cpForm"><textarea class="textarea" id="cpQ" rows="1" placeholder="Demandez au copilote… (ex. « écris une bio », « analyse mes stats »)" aria-label="Message au copilote"></textarea><button type="submit" class="btn btn-sig" aria-label="Envoyer">' + S.ic('send', 17) + '</button></form>' +
+        '<form class="cp-input" id="cpForm"><textarea class="textarea" id="cpQ" rows="1" placeholder="Demandez au copilote…" aria-label="Message au copilote"></textarea><button type="submit" class="btn btn-sig" aria-label="Envoyer">' + S.ic('send', 17) + '</button></form>' +
       '</div>';
     viewEl = main;
     var thread = main.querySelector('#cpThread');

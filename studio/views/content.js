@@ -29,7 +29,7 @@
     main.innerHTML =
       '<div class="sec-h"><div><h2 class="sec-t">Contenus</h2><p class="sec-d">Publications, contenus exclusifs, stories éphémères, PPV et bundles — avec un niveau d’accès par contenu.</p></div>' +
         '<button type="button" class="btn btn-primary" id="ctNew">' + S.ic('plus', 16) + 'Nouveau contenu</button></div>' +
-      '<div class="kpis">' +
+      '<div class="kpis k4">' +
         kpi('Publiés', S.num(counts.published), 'visibles dans l’univers') + kpi('Programmés', S.num(counts.scheduled), 'publication automatique') +
         kpi('Brouillons', S.num(counts.draft), 'non visibles') + kpi('Revenus PPV estimés', S.money(ppv), 'contenus à l’unité & bundles') +
       '</div>' +

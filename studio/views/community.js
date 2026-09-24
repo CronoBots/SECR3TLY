@@ -47,7 +47,7 @@
     var consent = all.filter(function (m) { return m.consentMarketing; }).length;
     el.innerHTML =
       '<div class="kpis">' +
-        '<div class="kpi"><div class="kpi-l">Membres (échantillon CRM)</div><div class="kpi-v">' + S.num(all.length) + '</div><div class="kpi-f"><span class="kpi-s">sur ' + esc(S.num(S.c.stats.members)) + ' au total</span></div></div>' +
+        '<div class="kpi"><div class="kpi-l">Membres (CRM)</div><div class="kpi-v">' + S.num(all.length) + '</div><div class="kpi-f"><span class="kpi-s">sur ' + esc(S.num(S.c.stats.members)) + ' au total</span></div></div>' +
         '<div class="kpi"><div class="kpi-l">Actifs</div><div class="kpi-v">' + S.pct(active / all.length, 0) + '</div><div class="kpi-f"><span class="kpi-s">' + S.num(active) + ' abonnements en cours</span></div></div>' +
         '<div class="kpi"><div class="kpi-l">Valeur vie moyenne</div><div class="kpi-v">' + S.money(spent / all.length) + '</div><div class="kpi-f"><span class="kpi-s">dépense moyenne par membre</span></div></div>' +
       '</div>' +
@@ -75,13 +75,13 @@
     function draw() {
       var list = filtered(), shown = list.slice(0, st.limit);
       var allSel = shown.length && shown.every(function (m) { return st.sel[m.id]; });
-      tableEl.innerHTML = list.length ? '<div class="tbl-wrap"><table class="tbl tbl-cards cm-tbl"><thead><tr><th style="width:36px"><input type="checkbox" class="cb" id="cmAll" aria-label="Tout sélectionner"' + (allSel ? ' checked' : '') + '></th><th>Membre</th><th>Palier</th><th>Statut</th><th class="r">Dépensé</th><th>Inscrit</th><th>Dernière visite</th><th>Tags</th></tr></thead><tbody>' +
+      tableEl.innerHTML = list.length ? '<label class="sel-all-m"><input type="checkbox" class="cb" id="cmAllM"' + (allSel ? ' checked' : '') + '> Tout sélectionner (' + shown.length + ')</label><div class="tbl-wrap"><table class="tbl tbl-cards cm-tbl"><thead><tr><th style="width:36px"><input type="checkbox" class="cb" id="cmAll" aria-label="Tout sélectionner"' + (allSel ? ' checked' : '') + '></th><th>Membre</th><th>Palier</th><th>Statut</th><th class="r">Dépensé</th><th>Inscrit</th><th>Dernière visite</th><th>Tags</th></tr></thead><tbody>' +
         shown.map(function (m) {
           return '<tr data-id="' + m.id + '" class="' + (st.sel[m.id] ? 'sel' : '') + '"><td class="td-cb"><input type="checkbox" class="cb" data-cb="' + m.id + '" aria-label="Sélectionner ' + esc(m.name) + '"' + (st.sel[m.id] ? ' checked' : '') + '></td>' +
             '<td class="td-main"><button type="button" class="cell-main cm-open" data-open="' + m.id + '">' + mAvatar(m) + '<span style="min-width:0;text-align:left"><span class="t" style="display:block">' + esc(m.name) + '</span><span class="s">' + esc(FLAGS[m.country] || m.country) + '</span></span></button></td>' +
-            '<td data-l="Palier"><span class="row" style="gap:8px;justify-content:flex-end">' + esc(m.tier) + ' ' + S.lvl(m.level) + '</span></td><td data-l="Statut">' + statusPill(m) + '</td>' +
+            '<td data-l="Palier"><span class="row cell-r" style="gap:8px">' + esc(m.tier) + ' ' + S.lvl(m.level) + '</span></td><td data-l="Statut">' + statusPill(m) + '</td>' +
             '<td class="r num" data-l="Dépensé">' + esc(S.money(m.spent)) + '</td><td data-l="Inscrit" class="nowrap">' + esc(S.date(m.joined, true)) + '</td><td data-l="Dernière visite" class="nowrap">' + esc(seen(m.lastSeenDays)) + '</td>' +
-            '<td data-l="Tags"><span class="row-wrap" style="justify-content:flex-end;gap:4px">' + (m.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') || '<span class="mute">—</span>') + '</span></td></tr>';
+            '<td data-l="Tags"><span class="row-wrap cell-r" style="gap:4px">' + (m.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') || '<span class="mute">—</span>') + '</span></td></tr>';
         }).join('') + '</tbody></table></div>' +
         '<div class="tbl-foot"><span class="xs mute">' + S.num(shown.length) + ' sur ' + S.num(list.length) + ' membres</span>' + (list.length > shown.length ? '<button type="button" class="btn btn-ghost btn-sm" id="cmMore">Afficher plus</button>' : '') + '</div>'
         : S.empty({ icon: 'community', title: 'Aucun membre', text: 'Aucun membre ne correspond à ces critères.' });
@@ -101,7 +101,7 @@
     el.querySelector('#cmQ').addEventListener('input', function () { st.q = this.value; st.limit = 25; draw(); });
     [['cmTier', 'tier'], ['cmLvl', 'level'], ['cmSt', 'status'], ['cmTag', 'tag']].forEach(function (x) { el.querySelector('#' + x[0]).addEventListener('change', function () { st[x[1]] = this.value; st.limit = 25; draw(); }); });
     el.addEventListener('change', function (e) {
-      if (e.target.id === 'cmAll') { filtered().slice(0, st.limit).forEach(function (m) { st.sel[m.id] = e.target.checked; }); draw(); }
+      if (e.target.id === 'cmAll' || e.target.id === 'cmAllM') { filtered().slice(0, st.limit).forEach(function (m) { st.sel[m.id] = e.target.checked; }); draw(); }
       var id = e.target.getAttribute('data-cb'); if (id) { st.sel[id] = e.target.checked; e.target.closest('tr').classList.toggle('sel', e.target.checked); drawBulk(); }
     });
     el.addEventListener('click', function (e) {

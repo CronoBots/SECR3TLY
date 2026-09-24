@@ -34,7 +34,7 @@
     var money = function (v) { return S.money(v); };
 
     el.innerHTML =
-      '<div class="kpis an-kpis">' + kp.map(function (k) { return '<div class="kpi"><div class="kpi-l">' + esc(k[0]) + '</div><div class="kpi-v">' + k[1] + '</div><div class="kpi-f">' + k[2] + '<span class="kpi-s">vs ' + days + ' j préc.</span></div></div>'; }).join('') + '</div>' +
+      '<div class="kpis k4">' + kp.map(function (k) { return '<div class="kpi"><div class="kpi-l">' + esc(k[0]) + '</div><div class="kpi-v">' + k[1] + '</div><div class="kpi-f">' + k[2] + '<span class="kpi-s">vs ' + days + ' j préc.</span></div></div>'; }).join('') + '</div>' +
       '<section class="panel mt"><div class="panel-h"><div><h3 class="panel-t">Trafic</h3><p class="panel-d">Visiteurs et visiteurs uniques par jour</p></div></div><div class="chart" id="anTraffic"></div>' +
         '<details class="data-table"><summary>Voir les données</summary><div class="tbl-wrap" style="max-height:260px;overflow:auto"><table class="tbl"><thead><tr><th>Date</th><th class="r">Visiteurs</th><th class="r">Uniques</th><th class="r">Pages vues</th><th class="r">Revenus</th></tr></thead><tbody>' +
         p.series.slice().reverse().map(function (s) { return '<tr><td>' + esc(S.date(s.date, true)) + '</td><td class="r num">' + S.num(s.visitors) + '</td><td class="r num">' + S.num(s.unique) + '</td><td class="r num">' + S.num(s.views) + '</td><td class="r num">' + esc(S.money(s.revenue)) + '</td></tr>'; }).join('') +
