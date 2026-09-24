@@ -145,6 +145,12 @@
   function lvlBadge(level) {
     return '<span class="lvl lvl-' + esc(level) + '">' + (level === 'public' ? '' : IC.lock.replace('width="18" height="18"', 'width="11" height="11"')) + esc(LEVEL_NAME[level] || level) + '</span>';
   }
+  /** Avatar partagé + initiales de secours si l'image ne charge pas */
+  function avatar(c, size) {
+    var h = UI.avatar(c, size);
+    var ini = esc((c.avatar && c.avatar.initials) || initials(c.name));
+    return h.replace('<span class="avatar" style="', '<span class="avatar" data-i="' + ini + '" style="font-size:' + Math.round(size * 0.36) + 'px;');
+  }
   function artHtml(a, label) { return UI.art(a, { label: label || '' }); }
 
   /* =================================================================
@@ -233,7 +239,7 @@
     var m = currentMembership();
     return '<div class="topbar" id="topbar" aria-hidden="true">' +
       '<div class="topbar-in">' +
-        '<a href="#top" class="tb-id" data-act="top" tabindex="-1">' + UI.avatar(c, 32) + '<span class="tb-name">' + esc(c.name) + '</span>' + (c.verified ? VERIFIED : '') + '</a>' +
+        '<a href="#top" class="tb-id" data-act="top" tabindex="-1">' + avatar(c, 32) + '<span class="tb-name">' + esc(c.name) + '</span>' + (c.verified ? VERIFIED : '') + '</a>' +
         (arr(c.tiers).length ? '<button class="btn btn-primary btn-sm" data-act="' + (m ? 'manage' : 'goto') + '" data-sec="memberships" tabindex="-1">' + (m ? 'Mon accès' : 'Rejoindre') + '</button>' : '') +
       '</div></div>';
   }
@@ -247,7 +253,7 @@
     var socials = arr(c.socials);
     var navs = sections.filter(function (id) { return id !== 'links'; });
     return '<div class="identity" id="top">' +
-      '<div class="id-avatar">' + UI.avatar(c, 112) + '</div>' +
+      '<div class="id-avatar">' + avatar(c, 112) + '</div>' +
       '<div class="id-text">' +
         '<h1 class="id-name">' + nameHtml(c) + '</h1>' +
         '<p class="id-meta">' + esc(c.pseudo || '@' + c.handle) + (c.location ? '<span class="sep" aria-hidden="true">·</span><span class="loc">' + IC.pin + esc(c.location) + '</span>' : '') + '</p>' +
@@ -392,7 +398,7 @@
       (!locked ? '<button class="media-hit" data-act="open-post" data-id="' + esc(p.id) + '" aria-label="Ouvrir « ' + esc(p.title) + ' »"></button>' : '') +
     '</div>';
     return '<article class="post card" data-type="' + esc(p.type) + '">' +
-      '<header class="post-head">' + UI.avatar(c, 34) + '<div class="ph-text"><strong>' + esc(c.name) + '</strong><span>' + esc(relDate(p.date)) + '</span></div>' +
+      '<header class="post-head">' + avatar(c, 34) + '<div class="ph-text"><strong>' + esc(c.name) + '</strong><span>' + esc(relDate(p.date)) + '</span></div>' +
         (p.access && p.access !== 'public' ? lvlBadge(p.access) : (p.price ? '<span class="lvl lvl-ppv">' + money(p.price) + '</span>' : '')) + '</header>' +
       media +
       '<div class="post-body"><h3 class="post-title">' + esc(p.title) + '</h3>' + (p.caption ? '<p class="post-cap">' + esc(p.caption) + '</p>' : '') + '</div>' +
@@ -713,7 +719,7 @@
     var c = state.creator;
     var tiers = paidTiers().filter(function (t) { return !t.inviteOnly; });
     var hasYearly = tiers.some(function (t) { return t.yearly; });
-    return '<div class="m-head">' + UI.avatar(c, 44) + '<div><p class="eyebrow">Rejoindre ' + esc(c.name) + '</p><h2 id="modal-title" class="m-title">Choisissez votre accès</h2></div></div>' +
+    return '<div class="m-head">' + avatar(c, 44) + '<div><p class="eyebrow">Rejoindre ' + esc(c.name) + '</p><h2 id="modal-title" class="m-title">Choisissez votre accès</h2></div></div>' +
       (hasYearly ? '<div class="period small-p" role="radiogroup" aria-label="Période"><button role="radio" data-act="m-period" data-p="month" data-sel="' + esc(selId) + '" aria-checked="' + (state.period === 'month') + '">Mensuel</button><button role="radio" data-act="m-period" data-p="year" data-sel="' + esc(selId) + '" aria-checked="' + (state.period === 'year') + '">Annuel</button></div>' : '') +
       '<form data-form="join1"><div class="opts" role="radiogroup" aria-label="Formules">' + tiers.map(function (t) {
         var y = state.period === 'year' && t.yearly;
@@ -741,7 +747,7 @@
 
   function openInvite(tier) {
     var v = S.getViewer();
-    openModal('<div class="m-head">' + UI.avatar(state.creator, 44) + '<div><p class="eyebrow">' + esc(tier.name) + ' · sur invitation</p><h2 id="modal-title" class="m-title">Demander une invitation</h2></div></div>' +
+    openModal('<div class="m-head">' + avatar(state.creator, 44) + '<div><p class="eyebrow">' + esc(tier.name) + ' · sur invitation</p><h2 id="modal-title" class="m-title">Demander une invitation</h2></div></div>' +
       '<p class="muted">Le cercle ' + esc(tier.name) + ' est volontairement restreint' + (tier.limited ? ' à ' + tier.limited + ' personnes' : '') + '. ' + esc(firstName(state.creator)) + ' étudie chaque demande personnellement.</p>' +
       '<form data-form="invite" data-tier="' + esc(tier.id) + '">' +
       '<div class="grid2"><div class="field"><label for="inv-name">Nom</label><input id="inv-name" class="input" name="name" value="' + esc(v.name || '') + '" required></div>' +
@@ -755,7 +761,7 @@
     if (!m) return openJoin();
     var t = tierById(m.tier) || tierForLevel(m.level, true);
     var since = m.since ? new Date(m.since).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
-    openModal('<div class="m-head">' + UI.avatar(state.creator, 44) + '<div><p class="eyebrow">Mon accès</p><h2 id="modal-title" class="m-title">' + esc(t ? t.name : LEVEL_NAME[m.level]) + '</h2></div></div>' +
+    openModal('<div class="m-head">' + avatar(state.creator, 44) + '<div><p class="eyebrow">Mon accès</p><h2 id="modal-title" class="m-title">' + esc(t ? t.name : LEVEL_NAME[m.level]) + '</h2></div></div>' +
       '<div class="summary"><span>' + lvlBadge(m.level) + '</span><strong>' + (t ? money(t.price) + '/mois' : '') + '</strong></div>' +
       (since ? '<p class="small muted">Membre depuis le ' + esc(since) + '. Prochain renouvellement dans 30 jours.</p>' : '') +
       (m.sim ? '<p class="small muted">Accès simulé (aperçu).</p>' : '') +
@@ -1145,7 +1151,7 @@
     app.innerHTML = '<main id="main" class="solo interstitial" tabindex="-1">' +
       (c.coverImg ? '<div class="inter-bg" aria-hidden="true"><img src="' + esc(c.coverImg) + '" alt="" onerror="this.remove()"></div>' : '') +
       '<div class="inter-card">' +
-        '<div class="inter-av">' + UI.avatar(c, 104) + '</div>' +
+        '<div class="inter-av">' + avatar(c, 104) + '</div>' +
         '<p class="eyebrow">Un univers SECR<span class="sig3">3</span>TLY</p>' +
         '<h1 class="solo-title">Entrer dans l’univers ' + esc(deName(c.name)) + '</h1>' +
         '<p class="solo-text">' + esc(c.tagline || '') + (c.tagline ? ' · ' : '') + esc(host) + '</p>' +

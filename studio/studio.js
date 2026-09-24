@@ -122,9 +122,53 @@
   root.addEventListener('hashchange', S.render);
   root.addEventListener('beforeunload', function () { S.saveNow(); });
 
+  /* ---------- « Réserver mon lien » depuis la landing (?claim=<handle>) ---------- */
+  function cleanHandle(h) { return String(h || '').toLowerCase().replace(/^@/, '').replace(/[^a-z0-9._-]/g, '').replace(/^[._-]+|[._-]+$/g, '').slice(0, 30); }
+  function nameFrom(h) { return h.split(/[._-]+/).filter(Boolean).map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ') || h; }
+  function createFromClaim(h) {
+    var existing = D.getCreator(h);
+    if (existing && !D.seedCreator(h)) return existing.handle; // déjà réservé dans ce navigateur
+    if (existing) { var n = 2; while (D.getCreator(h + n)) n++; h = h + n; }
+    var c = D.seedCreator('lena'), name = nameFrom(h);
+    c.handle = h; c.name = name; c.pseudo = '@' + h; c.verified = false; c.domain = '';
+    c.tagline = 'Mode · Coulisses · Exclusivités';
+    c.bio = 'Bienvenue dans mon univers : ici, je partage ce que je ne poste nulle part ailleurs. Contenus exclusifs, coulisses et offres réservées aux membres.';
+    c.avatar = { initials: name.split(' ').map(function (w) { return w[0]; }).join('').slice(0, 2).toUpperCase() || h.slice(0, 2).toUpperCase(), a: '#e8b4bc', b: '#9c7fa6' };
+    c.seo = { title: name + ' — univers officiel', description: 'L’univers officiel de ' + name + ' : contenus exclusifs, boutique, abonnements et coulisses, au même endroit.' };
+    if (c.mediakit) c.mediakit.contact = 'partenariats@' + h + '.com';
+    c.claimedAt = new Date().toISOString();
+    D.saveCreator(c);
+    return h;
+  }
+  function claimWelcome(raw) {
+    var h = cleanHandle(raw);
+    D.store.del('claim');
+    try { if (location.search.indexOf('claim=') >= 0) history.replaceState(null, '', location.pathname + location.hash); } catch (e) { /* ignore */ }
+    if (!h) return;
+    S.modal({
+      title: 'Bienvenue sur SECR3TLY', cls: 'dlg-sm claim-dlg',
+      body: '<div class="claim"><div class="claim-orb">' + S.ic('star', 22) + '</div>' +
+        '<p class="claim-url"><span>secr3tly.com/</span><b>' + esc(h) + '</b></p><p class="claim-t">est réservé pour vous.</p>' +
+        '<p class="dim small">Créez votre univers en quelques minutes : nous le pré-remplissons avec un exemple que vous personnalisez librement — thème, sections, offres, contenus.</p>' +
+        '<p class="xs mute mt">Démo : tout reste dans ce navigateur, aucun paiement réel.</p></div>',
+      foot: '<button type="button" class="btn btn-ghost btn-sm" data-close>Explorer la démo de Lena</button><button type="button" class="btn btn-sig btn-sm" id="claimGo" autofocus>' + S.ic('sparkle', 15) + 'Créer mon univers</button>',
+      onOpen: function (el, close) {
+        el.querySelector('#claimGo').addEventListener('click', function () {
+          var nh = createFromClaim(h);
+          close(true);
+          S.saveNow(); S.load(nh); renderAccount(); S.emit('account');
+          S.go('#/universe/identity');
+          U.toast('Votre univers ' + nh + ' est prêt — personnalisez-le !');
+        });
+      }
+    });
+  }
+
   // Démarrage
   var q = new URLSearchParams(location.search);
   S.load(q.get('u') || D.store.get('studio:handle', 'lena'));
   renderAccount();
   S.render();
+  var claim = q.get('claim') || D.store.get('claim', null);
+  if (claim) claimWelcome(claim);
 })(window);
