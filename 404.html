@@ -44,6 +44,10 @@
   var r;
   try { r = route(w.location.href); } catch (e) { r = { base: '/', home: '/', reason: 'invalid' }; }
   w.__route = r;
+  try {
+    var ic = document.createElement('link'); ic.rel = 'icon'; ic.type = 'image/svg+xml'; ic.href = (r.home || '/') + 'assets/favicon.svg';
+    document.head.appendChild(ic);
+  } catch (e) { /* ignore */ }
   if (!r.redirect) return;
 
   /* Vérifie que l'univers existe (données de démo + univers créés dans ce navigateur).
