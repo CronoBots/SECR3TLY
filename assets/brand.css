@@ -1,0 +1,120 @@
+/* =====================================================================
+   SECR3TLY — Design system (marque plateforme)
+   Luxury × Creator × Social × Exclusive — pas de néon, pas de "gaming".
+   Utilisé par : landing, explore, studio. (Les pages créateur utilisent
+   leur propre thème généré par assets/themes.js.)
+   ===================================================================== */
+:root{
+  /* Palette de marque */
+  --noir:        #0b0909;   /* noir profond */
+  --noir-2:      #141011;   /* surfaces */
+  --noir-3:      #1c1618;   /* surfaces élevées */
+  --ivoire:      #f3ece6;   /* ivoire nacré (texte) */
+  --ivoire-dim:  #b9aea8;   /* texte secondaire */
+  --ivoire-mute: #7d7270;   /* texte tertiaire */
+  --champagne:   #d9c3a0;
+  --poudre:      #e8b4bc;   /* rose poudré */
+  --vieux-rose:  #c0707f;
+  --mauve:       #9c7fa6;
+  --signature:   #d4467e;   /* la couleur du « 3 » */
+  --signature-rgb: 212,70,126;
+  --champagne-rgb: 217,195,160;
+  --line:        rgba(243,236,230,.10);
+  --line-2:      rgba(243,236,230,.18);
+  --glass:       rgba(28,22,24,.62);
+
+  --ok:#7fbf9a; --warn:#e0b36a; --err:#e07a7a;
+
+  --grad-signature: linear-gradient(135deg,#e8b4bc 0%,#d4467e 55%,#9c7fa6 100%);
+  --grad-nacre: linear-gradient(135deg,#fbf6f1 0%,#e9ddd4 45%,#d9c3a0 100%);
+
+  --font-display: 'Cormorant Garamond','Cormorant',Georgia,serif;
+  --font-ui: 'Manrope','Inter','Segoe UI',-apple-system,BlinkMacSystemFont,sans-serif;
+
+  --r-sm:10px; --r:16px; --r-lg:24px; --r-xl:32px;
+  --shadow: 0 20px 60px -20px rgba(0,0,0,.7);
+  --ease: cubic-bezier(.22,.8,.2,1);
+  --maxw: 1180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-ui);background:var(--noir);color:var(--ivoire);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img,svg,video{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+::selection{background:var(--signature);color:#fff}
+:focus-visible{outline:2px solid var(--poudre);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- Typo ---------- */
+.display{font-family:var(--font-display);font-weight:500;letter-spacing:-.01em;line-height:1.02}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--champagne);font-weight:600}
+.muted{color:var(--ivoire-dim)}
+.sig{color:var(--signature)}
+.nacre{background:var(--grad-nacre);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-text{background:var(--grad-signature);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Wordmark texte (le 3 est la signature) */
+.wordmark{font-family:var(--font-ui);font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.wordmark .three{color:var(--signature)}
+.wordmark-img{height:22px;width:auto;mix-blend-mode:screen}
+
+/* ---------- Layout ---------- */
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+@media(min-width:760px){.container{padding:0 32px}}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.9em 1.5em;border-radius:999px;
+  font-weight:600;font-size:.95rem;letter-spacing:.01em;transition:transform .25s var(--ease),box-shadow .25s,background .25s,border-color .25s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--grad-nacre);color:#1a1214;box-shadow:0 10px 30px -10px rgba(var(--champagne-rgb),.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(var(--champagne-rgb),.7)}
+.btn-sig{background:var(--signature);color:#fff;box-shadow:0 10px 30px -12px rgba(var(--signature-rgb),.8)}
+.btn-sig:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--ivoire);background:rgba(243,236,230,.03)}
+.btn-ghost:hover{border-color:var(--poudre);background:rgba(232,180,188,.06)}
+.btn-sm{padding:.55em 1em;font-size:.84rem}
+
+/* ---------- Surfaces ---------- */
+.card{background:linear-gradient(180deg,rgba(243,236,230,.045),rgba(243,236,230,.015));border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:24px}
+.glass{background:var(--glass);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1px solid var(--line)}
+.chip{display:inline-flex;align-items:center;gap:.4em;padding:.3em .8em;border-radius:999px;font-size:.74rem;font-weight:600;
+  border:1px solid var(--line-2);color:var(--ivoire-dim);letter-spacing:.02em}
+
+/* Niveaux d'accès (utilisés partout) */
+.lvl{display:inline-flex;align-items:center;gap:.35em;padding:.22em .7em;border-radius:999px;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lvl-public{background:rgba(243,236,230,.08);color:var(--ivoire)}
+.lvl-members{background:rgba(217,195,160,.14);color:var(--champagne)}
+.lvl-vip{background:rgba(212,70,126,.16);color:#f08fb3}
+.lvl-private{background:rgba(156,127,166,.18);color:#c9b2d2}
+
+/* ---------- Formulaires ---------- */
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.78rem;color:var(--ivoire-dim);font-weight:600}
+.input,.select,.textarea{width:100%;background:rgba(243,236,230,.04);border:1px solid var(--line-2);border-radius:12px;padding:.7em .9em;outline:none;transition:border-color .2s}
+.input:focus,.select:focus,.textarea:focus{border-color:var(--poudre)}
+.textarea{min-height:96px;resize:vertical}
+.select option{background:var(--noir-2)}
+
+/* ---------- Fonds d'ambiance ---------- */
+.aura{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(55% 45% at 50% -8%, rgba(var(--signature-rgb),.16), transparent 70%),
+    radial-gradient(40% 35% at 100% 10%, rgba(156,127,166,.12), transparent 70%),
+    radial-gradient(45% 40% at 0% 100%, rgba(var(--champagne-rgb),.08), transparent 70%)}
+.grain{position:fixed;inset:0;z-index:-1;opacity:.045;pointer-events:none;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- Apparition au scroll ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Toast ---------- */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;z-index:999;padding:.8em 1.2em;border-radius:999px;
+  background:var(--noir-3);border:1px solid var(--line-2);font-size:.88rem;transition:all .35s var(--ease);pointer-events:none;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
